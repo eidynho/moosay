@@ -1,10 +1,12 @@
-import { Test } from './components/test'
+import { TextareaComponent } from './components/Textarea'
+import { ButtonComponent } from './components/Button'
+
 export function App() {
 
   return (
-    <div className="mx-auto sm:bg-yellow-600 md:bg-green-600">
-      <h1>Hello world</h1>
-      <Test />
+    <div className="flex flex-col justify-center items-center  container mx-auto">
+      <TextareaComponent />
+      <ButtonComponent content="Vache say" />
     </div>
   )
 }
