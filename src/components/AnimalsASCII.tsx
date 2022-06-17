@@ -40,6 +40,12 @@ export const ducks = (
   </span>
 )
 
+export const fish = (
+  <span>
+    &nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;/`·.,<br />&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;/,...,`:·<br />&nbsp;&nbsp;&nbsp;,.·´&nbsp;&nbsp;,&nbsp;&nbsp;&nbsp;`·.,.·´&#41;<br />&nbsp;&nbsp;:&nbsp;©&nbsp;&#41;:'';&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,&nbsp;&nbsp;&#123;<br />&nbsp;&nbsp;&nbsp;`·.,&nbsp;`·&nbsp;&nbsp;,.·´\`·,&#41;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`\\''\,.·´
+  </span>
+)
+
 export const tux = (
   <span>
     &nbsp;&nbsp;&nbsp;\<br />&nbsp;&nbsp;&nbsp;&nbsp;\<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.--.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|o_o |<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:_/ |<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;\&nbsp;\<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#40;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&#41;<br />&nbsp;&nbsp;&nbsp;&nbsp;/'\_&nbsp;&nbsp;&nbsp;_/`\<br />&nbsp;&nbsp;&nbsp;&nbsp;\___&#41;=&#40;___/

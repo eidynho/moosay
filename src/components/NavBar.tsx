@@ -18,6 +18,7 @@ export function NavBarComponent() {
         <option value="dog">Dog</option>
         <option value="dolphin">Dolphin</option>
         <option value="ducks">Ducks</option>
+        <option value="fish">Fish</option>
         <option value="tux">Tux &#40;Linux&#41;</option>
       </select>
     </nav>
