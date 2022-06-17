@@ -13,6 +13,7 @@ export function NavBarComponent() {
       >
         <option value="cow">Cow</option>
         <option value="bat">Bat</option>
+        <option value="bear">Bear</option>
         <option value="tux">Tux &#40;Linux&#41;</option>
       </select>
     </nav>

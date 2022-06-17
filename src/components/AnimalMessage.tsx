@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AnimalContext } from '../contexts/AnimalContext'
 import { MessageContext } from '../contexts/MessageContext'
-import { cow, bat, tux } from './AnimalsASCII'
+import { cow, bat, bear, tux } from './AnimalsASCII'
 
 export function AnimalMessage() {
   const { animal } = useContext(AnimalContext)
@@ -25,6 +25,10 @@ export function AnimalMessage() {
       return bat
     }
 
+    if (animal === 'bear') {
+      return bear
+    }
+
     if (animal === 'tux') {
       return tux
     }
@@ -35,7 +39,7 @@ export function AnimalMessage() {
       {
         !emptyMessage ? (
           <div className="py-4 px-8 max-w-xs text-justify">
-            <span className="font-mono leading-5 break-words">
+            <span className="font-mono leading-none break-words">
               <>
                 {'_'.repeat(maxRepeatMessageWall())} <br />
                 {message}<br />
