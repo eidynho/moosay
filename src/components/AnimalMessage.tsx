@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { AnimalContext } from '../contexts/AnimalContext'
 import { MessageContext } from '../contexts/MessageContext'
 
-export function Cow() {
+export function AnimalMessage() {
   const { animal } = useContext(AnimalContext)
   const { message } = useContext(MessageContext)
   const emptyMessage = message.trim() === ''
@@ -23,7 +23,7 @@ export function Cow() {
     if (message.length <= 22) {
       return message.length + 1
     } else {
-      return 28
+      return 25
     }
   }
 

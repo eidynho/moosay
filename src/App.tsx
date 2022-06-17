@@ -4,7 +4,7 @@ import { AnimalContext } from "./contexts/AnimalContext"
 import { NavBarComponent } from './components/NavBar'
 import { TextareaComponent } from './components/Textarea'
 
-import { Cow } from './components/Cow'
+import { AnimalMessage } from './components/AnimalMessage'
 
 export function App() {
   // const { animal, setAnimal } = useContext(AnimalContext)
@@ -14,7 +14,7 @@ export function App() {
     <div className="flex flex-col justify-center items-center  container mx-auto">
       <NavBarComponent />
       <TextareaComponent />
-      <Cow />
+      <AnimalMessage />
     </div>
   )
 }
