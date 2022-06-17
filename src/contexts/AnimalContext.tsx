@@ -12,7 +12,7 @@ type AnimalContextProvider = {
 }
 
 export function AnimalContextProvider({ children }: AnimalContextProvider) {
-  const [animal, setAnimal] = useState('teste')
+  const [animal, setAnimal] = useState('cow')
 
   return (
     <AnimalContext.Provider value={{ animal, setAnimal }}>
