@@ -12,7 +12,8 @@ export function NavBarComponent() {
         onChange={(e) => setAnimal(e.target.value)}
       >
         <option value="cow">Cow</option>
-        <option value="linux">Linux</option>
+        <option value="bat">Bat</option>
+        <option value="tux">Tux &#40;Linux&#41;</option>
       </select>
     </nav>
   )

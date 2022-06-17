@@ -1,23 +1,12 @@
 import { useContext } from 'react'
 import { AnimalContext } from '../contexts/AnimalContext'
 import { MessageContext } from '../contexts/MessageContext'
+import { cow, bat, tux } from './AnimalsASCII'
 
 export function AnimalMessage() {
   const { animal } = useContext(AnimalContext)
   const { message } = useContext(MessageContext)
   const emptyMessage = message.trim() === ''
-
-  const cow = (
-    <span>
-      &nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;&nbsp;^__^ <br />&nbsp;&nbsp;&nbsp;&nbsp;\&nbsp;&nbsp;(oo)\________ <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(__)\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)\/\ <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||----w&nbsp;| <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||
-    </span>
-  )
-
-  const linux = (
-    <span>
-      &nbsp;&nbsp;&nbsp;\<br />&nbsp;&nbsp;&nbsp;&nbsp;\<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.--.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|o_o |<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|:_/ |<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;\&nbsp;\<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;)<br />&nbsp;&nbsp;&nbsp;&nbsp;/'\_&nbsp;&nbsp;&nbsp;_/`\<br />&nbsp;&nbsp;&nbsp;&nbsp;\___)=(___/
-    </span>
-  )
 
   function maxRepeatMessageWall() {
     if (message.length <= 22) {
@@ -32,8 +21,12 @@ export function AnimalMessage() {
       return cow
     }
 
-    if (animal === 'linux') {
-      return linux
+    if (animal === 'bat') {
+      return bat
+    }
+
+    if (animal === 'tux') {
+      return tux
     }
   }
 
