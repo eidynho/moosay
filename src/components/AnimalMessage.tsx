@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AnimalContext } from '../contexts/AnimalContext'
 import { MessageContext } from '../contexts/MessageContext'
-import { cow, bat, bear, tux } from './AnimalsASCII'
+import { cow, bat, bear, cat, dog, dolphin, ducks, tux } from './AnimalsASCII'
 
 export function AnimalMessage() {
   const { animal } = useContext(AnimalContext)
@@ -27,6 +27,22 @@ export function AnimalMessage() {
 
     if (animal === 'bear') {
       return bear
+    }
+
+    if (animal === 'cat') {
+      return cat
+    }
+
+    if (animal === 'dog') {
+      return dog
+    }
+
+    if (animal === 'dolphin') {
+      return dolphin
+    }
+
+    if (animal === 'ducks') {
+      return ducks
     }
 
     if (animal === 'tux') {

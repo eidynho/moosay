@@ -14,6 +14,10 @@ export function NavBarComponent() {
         <option value="cow">Cow</option>
         <option value="bat">Bat</option>
         <option value="bear">Bear</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="dolphin">Dolphin</option>
+        <option value="ducks">Ducks</option>
         <option value="tux">Tux &#40;Linux&#41;</option>
       </select>
     </nav>
