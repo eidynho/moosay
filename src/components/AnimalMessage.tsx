@@ -58,7 +58,7 @@ export function AnimalMessage() {
     <>
       {
         !emptyMessage ? (
-          <div className="py-4 px-8 max-w-xs text-justify">
+          <div className="py-4 px-4 max-w-xs text-justify">
             <span className="font-mono leading-none break-words">
               <>
                 {'_'.repeat(maxRepeatMessageWall())} <br />
