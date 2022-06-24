@@ -12,7 +12,7 @@ export function AnimalMessage() {
     if (message.length <= 22) {
       return message.length + 1
     } else {
-      return 25
+      return 27
     }
   }
 
