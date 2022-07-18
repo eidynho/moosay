@@ -53,7 +53,7 @@ export function AnimalMessage() {
   return (
     <>
       {
-        !emptyMessage ? (
+        !emptyMessage && (
           <div className="py-2 px-2 max-w-xs text-start">
             <span className="font-mono leading-none break-words">
               <>
@@ -64,7 +64,7 @@ export function AnimalMessage() {
               </>
             </span>
           </div>
-        ) : null
+        )
       }
     </>
   )
