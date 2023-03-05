@@ -1,22 +1,22 @@
-import { createContext, useState, ReactNode } from 'react'
+import { createContext, useState, ReactNode } from "react";
 
 type AnimalType = {
-  animal: string
-  setAnimal: any
-}
+    animal: string;
+    setAnimal: any;
+};
 
-export const AnimalContext = createContext({} as AnimalType)
+export const AnimalContext = createContext({} as AnimalType);
 
 type AnimalContextProvider = {
-  children: ReactNode
-}
+    children: ReactNode;
+};
 
 export function AnimalContextProvider({ children }: AnimalContextProvider) {
-  const [animal, setAnimal] = useState('cow')
+    const [animal, setAnimal] = useState("cow");
 
-  return (
-    <AnimalContext.Provider value={{ animal, setAnimal }}>
-      {children}
-    </AnimalContext.Provider>
-  )
+    return (
+        <AnimalContext.Provider value={{ animal, setAnimal }}>
+            {children}
+        </AnimalContext.Provider>
+    );
 }

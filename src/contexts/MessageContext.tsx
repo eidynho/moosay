@@ -1,22 +1,22 @@
-import { createContext, useState, ReactNode } from 'react'
+import { createContext, useState, ReactNode } from "react";
 
 type MessageType = {
-  message: string
-  setMessage: any
-}
+    message: string;
+    setMessage: any;
+};
 
-export const MessageContext = createContext({} as MessageType)
+export const MessageContext = createContext({} as MessageType);
 
 type MessageContextProvider = {
-  children: ReactNode
-}
+    children: ReactNode;
+};
 
 export function MessageContextProvider({ children }: MessageContextProvider) {
-  const [message, setMessage] = useState('')
+    const [message, setMessage] = useState("");
 
-  return (
-    <MessageContext.Provider value={{ message, setMessage }}>
-      {children}
-    </MessageContext.Provider>
-  )
+    return (
+        <MessageContext.Provider value={{ message, setMessage }}>
+            {children}
+        </MessageContext.Provider>
+    );
 }
