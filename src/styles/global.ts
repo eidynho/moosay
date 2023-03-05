@@ -2,26 +2,27 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     ::selection {
-        background-color: #E05263;
+        background-color: ${(props) => props.theme["yellow-500"]};
+        color: ${(props) => props.theme.black};
     }
 
     ::-webkit-scrollbar {
         width: 0.6em;
         height: 0.6em;
-        background: transparent;
+        background-color: transparent;
     }
 
     ::-webkit-scrollbar-track {
-        background: transparent;
+        background-color: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #888888;
+        background-color: ${(props) => props.theme["zinc-700"]};
         border-radius: 99px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #555555;
+        background-color: ${(props) => props.theme["zinc-800"]};
     }
 
     * {
