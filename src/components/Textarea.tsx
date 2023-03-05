@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { ChangeEvent, useContext } from "react";
 import { AnimalContext } from "../contexts/AnimalContext";
 import { MessageContext } from "../contexts/MessageContext";
 
@@ -6,15 +6,20 @@ export function TextareaComponent() {
     const { animal } = useContext(AnimalContext);
     const { message, setMessage } = useContext(MessageContext);
 
-    const placeholderMessage = `Say something and the ${animal} will repeat...`;
+    const placeholderMessage = `Type a message and the ${animal} will repeat...`;
+
+    function handleChangeMessage(event: ChangeEvent<HTMLTextAreaElement>) {
+        setMessage(event.target.value);
+    }
 
     return (
         <textarea
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            rows={6}
+            onChange={handleChangeMessage}
+            rows={8}
             placeholder={placeholderMessage}
-            className="w-5/6 p-4 m-4 rounded-lg text-zinc-900 outline-none"
+            autoFocus
+            className="w-[21.5rem] max-h-[48rem] font-mono p-4 rounded-lg text-zinc-900 outline-none"
         />
     );
 }

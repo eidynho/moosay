@@ -9,60 +9,49 @@ export function AnimalMessage() {
     const emptyMessage = message.trim() === "";
 
     function maxRepeatMessageWall() {
-        if (message.length <= 22) {
-            return message.length + 1;
-        } else {
-            return 27;
-        }
+        return message.length <= 30 ? message.length + 1 : 31;
     }
 
     function animalInScreen() {
-        if (animal === "cow") {
-            return cow;
-        }
-
-        if (animal === "bat") {
-            return bat;
-        }
-
-        if (animal === "cat") {
-            return cat;
-        }
-
-        if (animal === "dog") {
-            return dog;
-        }
-
-        if (animal === "dolphin") {
-            return dolphin;
-        }
-
-        if (animal === "ducks") {
-            return ducks;
-        }
-
-        if (animal === "fish") {
-            return fish;
-        }
-
-        if (animal === "tux") {
-            return tux;
+        switch (animal) {
+            case "cow":
+                return cow;
+            case "bat":
+                return bat;
+            case "cat":
+                return cat;
+            case "dog":
+                return dog;
+            case "dolphin":
+                return dolphin;
+            case "ducks":
+                return ducks;
+            case "fish":
+                return fish;
+            case "tux":
+                return tux;
         }
     }
 
     return (
         <>
-            {!emptyMessage && (
-                <div className="py-2 px-2 max-w-xs text-start">
-                    <span className="font-mono leading-none break-words">
+            {!emptyMessage ? (
+                <div className="px-2 max-w-xs text-start">
+                    <div className="font-mono break-words whitespace-pre-wrap leading-6">
                         <>
                             {"_".repeat(maxRepeatMessageWall())} <br />
-                            {message}
+                            <span className="block max-h-[36rem] overflow-y-auto">
+                                {message}
+                            </span>
                             <br />
                             {"-".repeat(maxRepeatMessageWall())} <br />
                             {animalInScreen()}
                         </>
-                    </span>
+                    </div>
+                </div>
+            ) : (
+                <div className="font-mono flex align-center justify-center w-80 h-60 border border-dashed rounded-lg">
+                    <span className="my-auto">{animal} will appear here</span>
                 </div>
             )}
         </>
