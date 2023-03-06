@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
+    CheckCircle,
     Copy,
     EnvelopeSimple,
     Share,
@@ -8,11 +9,40 @@ import {
     X,
 } from "phosphor-react";
 
+import { MessageContext } from "../contexts/MessageContext";
+import { AnimalContext } from "../contexts/AnimalContext";
+
 export function ShareModal() {
     const [isOpen, setIsOpen] = useState(false);
+    const [shareLink, setShareLink] = useState("");
+    const [shareLinkIsCopied, setShareLinkIsCopied] = useState(false);
+
+    const { animal } = useContext(AnimalContext);
+    const { message } = useContext(MessageContext);
+
+    useEffect(() => {
+        // generate link to share
+        if (isOpen) {
+            const encodedMessage = encodeURI(message);
+            const encodedAnimal = encodeURI(animal);
+            const queryParams = `/share?message=${encodedMessage}&animal=${encodedAnimal}`;
+            setShareLink(document.location.origin + queryParams);
+        }
+
+        setShareLinkIsCopied(false);
+    }, [isOpen]);
 
     function handleToggleModal() {
         setIsOpen((state) => !state);
+    }
+
+    async function handleCopyShareLink() {
+        try {
+            await navigator.clipboard.writeText(shareLink);
+            setShareLinkIsCopied(true);
+        } catch (err) {
+            throw new Error("Error: Failed to write text to clipboard.");
+        }
     }
 
     return (
@@ -95,14 +125,33 @@ export function ShareModal() {
                                 </div>
                             </div>
 
-                            <div className="border rounded py-3 px-5 relative">
-                                <div className="max-w-lg truncate text-gray-800">
-                                    link
+                            <div
+                                onClick={handleCopyShareLink}
+                                className={
+                                    !shareLinkIsCopied
+                                        ? "border border-gray-300 rounded py-3 px-5 relative cursor-pointer"
+                                        : "border border-green-500 rounded py-3 px-5 relative cursor-pointer"
+                                }
+                            >
+                                <div
+                                    title={shareLink}
+                                    className="max-w-[32rem] truncate text-gray-800"
+                                >
+                                    {shareLink}
                                 </div>
-                                <button className="absolute top-1 right-2 flex items-center gap-1 py-2 px-4 rounded bg-green-400 text-gray-900 transition-colors hover:bg-green-500">
-                                    <Copy size={24} />
-                                    <span>Copy</span>
-                                </button>
+                                <span
+                                    title="Copy snippet"
+                                    className="absolute top-1 right-2 flex items-center gap-1 p-2 rounded text-gray-900 transition-colors focus:outline-none active:outline-none"
+                                >
+                                    {!shareLinkIsCopied ? (
+                                        <Copy size={24} />
+                                    ) : (
+                                        <CheckCircle
+                                            size={24}
+                                            className="text-green-700"
+                                        />
+                                    )}
+                                </span>
                             </div>
                         </div>
                     </div>
