@@ -68,7 +68,7 @@ export function ShareModal() {
             >
                 <div
                     onClick={(e) => e.stopPropagation()}
-                    className="relative w-full h-full max-w-2xl md:h-auto"
+                    className="relative w-full h-auto max-w-2xl"
                 >
                     {/* Modal content */}
                     <div className="relative bg-white rounded-lg shadow">
@@ -135,7 +135,7 @@ export function ShareModal() {
                             >
                                 <div
                                     title={shareLink}
-                                    className="max-w-[32rem] truncate text-gray-800"
+                                    className="max-w-[90%] truncate text-gray-800"
                                 >
                                     {shareLink}
                                 </div>
