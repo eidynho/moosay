@@ -9,7 +9,7 @@ export function AnimalMessage() {
     const emptyMessage = message.trim() === "";
 
     function maxRepeatMessageWall() {
-        return message.length <= 30 ? message.length + 1 : 31;
+        return message.length <= 28 ? message.length + 1 : 29;
     }
 
     function animalInScreen() {
@@ -36,15 +36,17 @@ export function AnimalMessage() {
     return (
         <>
             {!emptyMessage ? (
-                <div className="px-2 max-w-xs text-start">
+                <div
+                    id="animalPicture"
+                    className="px-4 pb-8 max-w-xs text-start"
+                >
                     <div className="font-mono break-words whitespace-pre-wrap leading-6">
                         <>
-                            {"_".repeat(maxRepeatMessageWall())} <br />
-                            <span className="block max-h-[36rem] overflow-y-auto">
+                            <div>{"_".repeat(maxRepeatMessageWall())}</div>
+                            <span className="block max-h-[36rem] overflow-y-auto pb-1">
                                 {message}
                             </span>
-                            <br />
-                            {"-".repeat(maxRepeatMessageWall())} <br />
+                            <div>{"-".repeat(maxRepeatMessageWall())}</div>
                             {animalInScreen()}
                         </>
                     </div>

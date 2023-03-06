@@ -36,6 +36,7 @@ export function TextareaComponent() {
             value={message}
             onChange={handleChangeMessage}
             rows={8}
+            maxLength={600}
             placeholder={placeholderMessage}
             autoFocus
             className="w-[21.5rem] max-h-[48rem] font-mono p-4 rounded-lg text-zinc-900 outline-none"
