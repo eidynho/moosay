@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { Image, X } from "phosphor-react";
 import html2canvas from "html2canvas";
 
-import { defaultTheme } from "../styles/themes/default";
-
 export function DownloadModal() {
     const [isOpen, setIsOpen] = useState(false);
     const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
@@ -19,7 +17,7 @@ export function DownloadModal() {
         const animalPictureRef = document.getElementById("animalPicture");
         if (animalPictureRef) {
             const generatedCanvas = await html2canvas(animalPictureRef, {
-                backgroundColor: defaultTheme["gray-900"],
+                backgroundColor: "#121214",
             });
 
             setCanvas(generatedCanvas);

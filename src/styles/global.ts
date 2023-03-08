@@ -1,50 +1,50 @@
-import { createGlobalStyle } from "styled-components";
+import { globalCss } from ".";
 
-export const GlobalStyle = createGlobalStyle`
-    ::selection {
-        background-color: ${(props) => props.theme["yellow-500"]};
-        color: ${(props) => props.theme.black};
-    }
+export const globalStyles = globalCss({
+    "::selection": {
+        backgroundColor: "$yellow500",
+        color: "$black",
+    },
 
-    ::-webkit-scrollbar {
-        width: 0.6em;
-        height: 0.6em;
-        background-color: transparent;
-    }
+    "::-webkit-scrollbar": {
+        width: "0.6em",
+        height: "0.6em",
+        backgroundColor: "transparent",
+    },
 
-    ::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
+    "::-webkit-scrollbar-track": {
+        backgroundColor: "transparent",
+    },
 
-    ::-webkit-scrollbar-thumb {
-        background-color: ${(props) => props.theme["zinc-700"]};
-        border-radius: 99px;
-    }
+    "::-webkit-scrollbar-thumb": {
+        backgroundColor: "$zinc700",
+        borderRadius: 99,
+    },
 
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: ${(props) => props.theme["zinc-800"]};
-    }
+    "::-webkit-scrollbar-thumb:hover": {
+        backgroundColor: "$zinc800",
+    },
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    "*": {
+        margin: 0,
+        padding: 0,
+        boxSizing: "border-box",
+    },
 
-    :focus {
-        outline: 0;
-        box-shadow: 0 0 0 2px ${(props) => props.theme["gray-500"]};
-    }
+    ":focus": {
+        outline: 0,
+        boxShadow: "0 0 0 2px $gray500",
+    },
 
-    body {
-        background-color: ${(props) => props.theme["gray-900"]};
-        color: ${(props) => props.theme["gray-300"]};
-        -webkit-font-smoothing: antialiased;
-    }
+    body: {
+        backgroundColor: "$gray900",
+        color: "$gray300",
+        "-webkit-font-smoothing": "antialiased",
+    },
 
-    body, input, textarea, button {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-    }
-`;
+    "body, input, textarea, button": {
+        fontFamily: "Poppins, sans-serif",
+        fontWeight: 400,
+        fontSize: "1rem",
+    },
+});

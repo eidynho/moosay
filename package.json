@@ -1,24 +1,27 @@
 {
   "name": "vachesay",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.8",
     "html2canvas": "^1.4.1",
+    "next": "13.2.3",
     "phosphor-react": "^1.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "styled-components": "^5.3.8"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@types/node": "18.14.6",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "@vitejs/plugin-react": "^3.1.0",
@@ -29,7 +32,6 @@
     "postcss": "^8.4.21",
     "prettier": "^2.3.2",
     "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "typescript": "^4.9.3"
   }
 }

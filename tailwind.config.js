@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./src/**/*.tsx"],
+    content: ["./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         fontFamily: {
             poppins: ["Poppins, sans-serif"],
