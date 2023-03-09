@@ -10,6 +10,7 @@
     "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@stitches/react": "^1.2.8",
     "html2canvas": "^1.4.1",
     "next": "13.2.3",

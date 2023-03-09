@@ -6,11 +6,11 @@ import {
     Share,
     TwitterLogo,
     WhatsappLogo,
-    X,
 } from "phosphor-react";
 
 import { MessageContext } from "../contexts/MessageContext";
 import { AnimalContext } from "../contexts/AnimalContext";
+import { BaseModal } from "./headless-ui/BaseModal";
 
 export function ShareModal() {
     const [isOpen, setIsOpen] = useState(false);
@@ -55,108 +55,78 @@ export function ShareModal() {
                 <span>Share</span>
             </button>
 
-            {/* Main modal */}
-            <div
-                id="shareModal"
-                onClick={handleToggleModal}
-                className={
-                    !isOpen
-                        ? "hidden"
-                        : "" +
-                          "fixed top-0 left-0 flex items-center justify-center z-50 w-full bg-black bg-opacity-50 p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full"
-                }
+            <BaseModal
+                title="Share"
+                isOpen={isOpen}
+                toggleModal={handleToggleModal}
             >
-                <div
-                    onClick={(e) => e.stopPropagation()}
-                    className="relative w-full h-auto max-w-2xl"
-                >
-                    {/* Modal content */}
-                    <div className="relative bg-white rounded-lg shadow">
-                        {/* Modal header */}
-                        <div className="flex items-center justify-between p-4 border-b">
-                            <h3 className="text-xl font-semibold text-gray-800">
-                                Share
-                            </h3>
-                            <button
-                                onClick={handleToggleModal}
-                                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-                                data-modal-hide="defaultModal"
-                            >
-                                <X size={18} />
-                                <span className="sr-only">Close modal</span>
-                            </button>
-                        </div>
-
-                        {/* Modal body */}
-                        <div className="p-6">
-                            <div className="flex items-center gap-4 mb-5">
-                                <div className="flex flex-col items-center gap-2">
-                                    <div
-                                        title="Whatsapp"
-                                        className="border rounded-full p-3 cursor-pointer bg-[#25D366] text-gray-100 transition-colors hover:bg-green-500"
-                                    >
-                                        <WhatsappLogo size={32} />
-                                    </div>
-                                    <span className="text-gray-900 text-xs">
-                                        Whatsapp
-                                    </span>
-                                </div>
-                                <div className="flex flex-col items-center gap-2">
-                                    <div
-                                        title="Twitter"
-                                        className="border rounded-full p-3 cursor-pointer bg-[#1DA1F2] text-gray-100 transition-colors hover:bg-sky-600"
-                                    >
-                                        <TwitterLogo size={32} />
-                                    </div>
-                                    <span className="text-gray-900 text-xs">
-                                        Twitter
-                                    </span>
-                                </div>
-                                <div className="flex flex-col items-center gap-2">
-                                    <div
-                                        title="Email"
-                                        className="border rounded-full p-3 cursor-pointer bg-gray-400 text-gray-100 transition-colors hover:bg-gray-500"
-                                    >
-                                        <EnvelopeSimple size={32} />
-                                    </div>
-                                    <span className="text-gray-900 text-xs">
-                                        E-mail
-                                    </span>
-                                </div>
-                            </div>
-
+                <div className="p-6">
+                    <div className="flex items-center gap-4 mb-5">
+                        <div className="flex flex-col items-center gap-2">
                             <div
-                                onClick={handleCopyShareLink}
-                                className={
-                                    !shareLinkIsCopied
-                                        ? "border border-gray-300 rounded py-3 px-5 relative cursor-pointer"
-                                        : "border border-green-500 rounded py-3 px-5 relative cursor-pointer"
-                                }
+                                title="Whatsapp"
+                                className="border rounded-full p-3 cursor-pointer bg-[#25D366] text-gray-100 transition-colors hover:bg-green-500"
                             >
-                                <div
-                                    title={shareLink}
-                                    className="max-w-[90%] truncate text-gray-800"
-                                >
-                                    {shareLink}
-                                </div>
-                                <span
-                                    title="Copy snippet"
-                                    className="absolute top-1 right-2 flex items-center gap-1 p-2 rounded text-gray-900 transition-colors focus:outline-none active:outline-none"
-                                >
-                                    {!shareLinkIsCopied ? (
-                                        <Copy size={24} />
-                                    ) : (
-                                        <CheckCircle
-                                            size={24}
-                                            className="text-green-700"
-                                        />
-                                    )}
-                                </span>
+                                <WhatsappLogo size={32} />
                             </div>
+                            <span className="text-gray-900 text-xs">
+                                Whatsapp
+                            </span>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <div
+                                title="Twitter"
+                                className="border rounded-full p-3 cursor-pointer bg-[#1DA1F2] text-gray-100 transition-colors hover:bg-sky-600"
+                            >
+                                <TwitterLogo size={32} />
+                            </div>
+                            <span className="text-gray-900 text-xs">
+                                Twitter
+                            </span>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                            <div
+                                title="Email"
+                                className="border rounded-full p-3 cursor-pointer bg-gray-400 text-gray-100 transition-colors hover:bg-gray-500"
+                            >
+                                <EnvelopeSimple size={32} />
+                            </div>
+                            <span className="text-gray-900 text-xs">
+                                E-mail
+                            </span>
                         </div>
                     </div>
+
+                    <div
+                        onClick={handleCopyShareLink}
+                        className={
+                            !shareLinkIsCopied
+                                ? "border border-gray-300 rounded py-3 px-5 relative cursor-pointer"
+                                : "border border-green-500 rounded py-3 px-5 relative cursor-pointer"
+                        }
+                    >
+                        <div
+                            title={shareLink}
+                            className="max-w-[90%] truncate text-gray-800"
+                        >
+                            {shareLink}
+                        </div>
+                        <span
+                            title="Copy snippet"
+                            className="absolute top-1 right-2 flex items-center gap-1 p-2 rounded text-gray-900 transition-colors focus:outline-none active:outline-none"
+                        >
+                            {!shareLinkIsCopied ? (
+                                <Copy size={24} />
+                            ) : (
+                                <CheckCircle
+                                    size={24}
+                                    className="text-green-700"
+                                />
+                            )}
+                        </span>
+                    </div>
                 </div>
-            </div>
+            </BaseModal>
         </>
     );
 }
