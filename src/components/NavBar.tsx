@@ -6,7 +6,7 @@ export function NavBarComponent() {
 
     return (
         <nav className="flex items-center justify-between w-full px-8 sm:px-16 h-16">
-            <span className="font-poppins">vacho.co</span>
+            <span className="font-manrope">vacho.co</span>
             <select
                 className="text-zinc-900 py-2 px-4 rounded-lg outline-none"
                 onChange={(e) => updateAnimal(e.target.value)}

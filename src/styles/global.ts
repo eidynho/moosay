@@ -43,7 +43,7 @@ export const globalStyles = globalCss({
     },
 
     "body, input, textarea, button": {
-        fontFamily: "Poppins, sans-serif",
+        fontFamily: "Manrope, sans-serif",
         fontWeight: 400,
         fontSize: "1rem",
     },
