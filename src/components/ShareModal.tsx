@@ -49,13 +49,15 @@ export function ShareModal() {
         <>
             <button
                 onClick={handleToggleModal}
-                className="flex align-center justify-center gap-2 py-2 px-4 rounded bg-yellow-500 text-gray-900 hover:bg-yellow-600 transition-colors"
+                className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-gray-300 border border-gray-300 transition-all
+                hover:bg-gray-300 hover:text-d-primary"
             >
                 <Share size={24} />
                 <span>Share</span>
             </button>
 
             <BaseModal
+                size="max-w-md"
                 title="Share"
                 isOpen={isOpen}
                 toggleModal={handleToggleModal}

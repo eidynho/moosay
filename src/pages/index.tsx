@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { AnimalContext } from "@/contexts/AnimalContext";
 
 import { AnimalMessage } from "@/components/AnimalMessage";
-import { NavBarComponent } from "@/components/NavBar";
 import { TextareaComponent } from "@/components/Textarea";
 import { ShareModal } from "@/components/ShareModal";
 import { DownloadModal } from "@/components/DownloadModal";

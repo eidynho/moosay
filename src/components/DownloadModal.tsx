@@ -8,7 +8,7 @@ import { BaseModal } from "./headless-ui/BaseModal";
 export function DownloadModal() {
     const [isOpen, setIsOpen] = useState(false);
     const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
-    const [typeFile, setTypeFile] = useState("png");
+    const [fileType, setFileType] = useState("png");
 
     const { message } = useContext(MessageContext);
 
@@ -34,11 +34,11 @@ export function DownloadModal() {
 
         const downloadLink = document.createElement("a");
         // set the href and download attributes
-        downloadLink.href = canvas.toDataURL(`image/${typeFile}`);
+        downloadLink.href = canvas.toDataURL(`image/${fileType}`);
 
         // set filename based on timestamp
         const timestampNewDate = +new Date();
-        downloadLink.download = `vachesay-${timestampNewDate}.${typeFile}`;
+        downloadLink.download = `vachesay-${timestampNewDate}.${fileType}`;
 
         // click the download link to download the screenshot
         downloadLink.click();
@@ -53,15 +53,16 @@ export function DownloadModal() {
             <button
                 disabled={!message}
                 onClick={handleToggleModal}
-                className="flex align-center justify-center gap-2 py-2 px-4 rounded bg-yellow-500 text-gray-900 transition-colors 
-                enabled:hover:bg-yellow-600
-                disabled:brightness-75 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-secondary border border-secondary transition-all
+                hover:enabled:bg-secondary hover:enabled:text-d-primary
+                disabled:cursor-not-allowed disabled:brightness-75"
             >
                 <Image size={24} />
                 <span>Generate picture</span>
             </button>
 
             <BaseModal
+                size="max-w-lg"
                 title="Generate picture"
                 isOpen={isOpen}
                 toggleModal={handleToggleModal}
@@ -79,17 +80,19 @@ export function DownloadModal() {
                     <div className="flex items-center justify-between">
                         <select
                             className="border border-gray-400 text-zinc-900 py-2 px-4 rounded-lg outline-none"
-                            onChange={(e) => setTypeFile(e.target.value)}
+                            onChange={(e) => setFileType(e.target.value)}
                         >
                             <option value="png">PNG</option>
                             <option value="jpg">JPG</option>
                         </select>
+
                         <button
                             onClick={handleDownloadPicture}
-                            className="flex align-center justify-center gap-2 py-2 px-4 rounded bg-yellow-500 text-gray-900 hover:bg-yellow-600 transition-colors"
+                            className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-d-primary bg-secondary transition-all
+                            hover:brightness-90"
                         >
                             <Image size={24} />
-                            <span>Download as {typeFile.toUpperCase()}</span>
+                            <span>Download as {fileType.toUpperCase()}</span>
                         </button>
                     </div>
                 </div>
