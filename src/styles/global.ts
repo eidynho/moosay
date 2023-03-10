@@ -2,7 +2,7 @@ import { globalCss } from ".";
 
 export const globalStyles = globalCss({
     "::selection": {
-        backgroundColor: "$yellow500",
+        backgroundColor: "$brand-secondary",
         color: "$black",
     },
 

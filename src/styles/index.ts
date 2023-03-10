@@ -18,6 +18,10 @@ export const {
             primary: "#1E1919",
             secondary: "#262222",
 
+            "brand-primary": "#DE85DD",
+            "brand-secondary": "#73DC8F",
+            "brand-tertiary": "#4B78E6",
+
             slate50: "#f8fafc",
             slate100: "#f1f5f9",
             slate200: "#e2e8f0",
