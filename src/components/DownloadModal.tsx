@@ -22,7 +22,7 @@ export function DownloadModal() {
         const animalPictureRef = document.getElementById("animalPicture");
         if (animalPictureRef) {
             const generatedCanvas = await html2canvas(animalPictureRef, {
-                backgroundColor: "#121214",
+                backgroundColor: "#1E1919",
             });
 
             setCanvas(generatedCanvas);
@@ -51,7 +51,7 @@ export function DownloadModal() {
     return (
         <>
             <button
-                disabled={!message}
+                disabled={!message || message === "<p></p>"}
                 onClick={handleToggleModal}
                 className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-secondary border border-secondary transition-all
                 hover:enabled:bg-secondary hover:enabled:text-d-primary

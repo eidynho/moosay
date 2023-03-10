@@ -31,7 +31,7 @@ export default function Home() {
                     updateSelected={updateAnimal}
                     customClasses="w-[21.5rem] mb-2"
                 />
-                <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
                     <TextareaComponent />
                     <AnimalMessage />
                 </div>

@@ -6,7 +6,7 @@ import { cow, bat, cat, dog, dolphin, ducks, fish, tux } from "./AnimalsASCII";
 export function AnimalMessage() {
     const { animal } = useContext(AnimalContext);
     const { message } = useContext(MessageContext);
-    const emptyMessage = message.trim() === "";
+    const emptyMessage = !message || message === "<p></p>";
 
     function maxRepeatMessageWall() {
         return message.length <= 28 ? message.length + 1 : 29;
@@ -43,9 +43,10 @@ export function AnimalMessage() {
                     <div className="font-mono break-words whitespace-pre-wrap leading-6">
                         <>
                             <div>{"_".repeat(maxRepeatMessageWall())}</div>
-                            <span className="block max-h-[36rem] overflow-y-auto pb-1">
-                                {message}
-                            </span>
+                            <span
+                                className="block max-h-[36rem] overflow-y-auto pb-1"
+                                dangerouslySetInnerHTML={{ __html: message }}
+                            ></span>
                             <div>{"-".repeat(maxRepeatMessageWall())}</div>
                             {animalInScreen()}
                         </>

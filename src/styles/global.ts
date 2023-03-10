@@ -47,4 +47,17 @@ export const globalStyles = globalCss({
         fontWeight: 400,
         fontSize: "1rem",
     },
+
+    p: {
+        minHeight: "1.5rem",
+    },
+
+    // Tiptap content styles
+    ".ProseMirror p.is-editor-empty:first-child::before": {
+        color: "#999999",
+        content: "attr(data-placeholder)",
+        float: "left",
+        height: 0,
+        pointerEvents: "none",
+    },
 });

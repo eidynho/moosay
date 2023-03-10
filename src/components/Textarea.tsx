@@ -1,10 +1,13 @@
-import { ChangeEvent, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
+
 import { AnimalContext } from "../contexts/AnimalContext";
 import { MessageContext } from "../contexts/MessageContext";
 
+import { Tiptap } from "./Tiptap";
+
 export function TextareaComponent() {
     const { animal, updateAnimal } = useContext(AnimalContext);
-    const { message, updateMessage } = useContext(MessageContext);
+    const { updateMessage } = useContext(MessageContext);
 
     useEffect(() => {
         // verify if href has query share query params
@@ -27,19 +30,16 @@ export function TextareaComponent() {
 
     const placeholderMessage = `Type a message and the ${animal} will repeat...`;
 
-    function handleChangeMessage(event: ChangeEvent<HTMLTextAreaElement>) {
-        updateMessage(event.target.value);
+    function updateContent(newContent: string) {
+        updateMessage(newContent);
     }
 
     return (
-        <textarea
-            value={message}
-            onChange={handleChangeMessage}
-            rows={8}
-            maxLength={600}
-            placeholder={placeholderMessage}
-            autoFocus
-            className="w-[21.5rem] max-h-[48rem] font-mono p-4 rounded-lg text-zinc-900 outline-none"
-        />
+        <>
+            <Tiptap
+                updateContent={updateContent}
+                placeholder={placeholderMessage}
+            />
+        </>
     );
 }

@@ -12,6 +12,10 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@stitches/react": "^1.2.8",
+    "@tiptap/extension-placeholder": "^2.0.0-beta.220",
+    "@tiptap/pm": "^2.0.0-beta.220",
+    "@tiptap/react": "^2.0.0-beta.220",
+    "@tiptap/starter-kit": "^2.0.0-beta.220",
     "html2canvas": "^1.4.1",
     "next": "13.2.3",
     "phosphor-react": "^1.4.1",
