@@ -33,7 +33,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }`}
             >
-                <TextBolder size={24} />
+                <TextBolder size={24} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleItalic().run()}
@@ -44,7 +44,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }`}
             >
-                <TextItalic size={24} />
+                <TextItalic size={24} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleStrike().run()}
@@ -55,7 +55,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }`}
             >
-                <TextStrikethrough size={24} />
+                <TextStrikethrough size={24} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleCode().run()}
@@ -66,7 +66,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }`}
             >
-                <Code size={24} />
+                <Code size={24} weight="bold" />
             </button>
             <button
                 onClick={() =>
@@ -78,7 +78,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }
             >
-                <TextHOne size={24} />
+                <TextHOne size={24} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleOrderedList().run()}
@@ -88,7 +88,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }`}
             >
-                <ListNumbers size={24} />
+                <ListNumbers size={24} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleBulletList().run()}
@@ -98,7 +98,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }`}
             >
-                <ListDashes size={24} />
+                <ListDashes size={24} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleBlockquote().run()}
@@ -108,7 +108,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                         : "text-l-primary"
                 }`}
             >
-                <Quotes size={24} />
+                <Quotes size={24} weight="bold" />
             </button>
         </div>
     );
