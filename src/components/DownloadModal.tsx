@@ -38,7 +38,7 @@ export function DownloadModal() {
 
         // set filename based on timestamp
         const timestampNewDate = +new Date();
-        downloadLink.download = `vachesay-${timestampNewDate}.${fileType}`;
+        downloadLink.download = `moosay-${timestampNewDate}.${fileType}`;
 
         // click the download link to download the screenshot
         downloadLink.click();

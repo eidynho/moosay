@@ -4,7 +4,7 @@ export function NavBarComponent() {
             <span className="font-bold">vacho.co</span>
 
             <a
-                href="https://github.com/eidynho/vachesay"
+                href="https://github.com/eidynho/moosay"
                 target="_blank"
                 className="flex items-center gap-2 font-bold py-2 px-3 rounded transition-colors cursor-pointer hover:bg-zinc-800"
             >
