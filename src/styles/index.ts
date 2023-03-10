@@ -15,6 +15,9 @@ export const {
             white: "#ffffff",
             black: "#000000",
 
+            primary: "#1E1919",
+            secondary: "#262222",
+
             slate50: "#f8fafc",
             slate100: "#f1f5f9",
             slate200: "#e2e8f0",
