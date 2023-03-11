@@ -1,5 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
+import { MessageContext } from "@/contexts/MessageContext";
 import { AnimalContext } from "@/contexts/AnimalContext";
 
 import { AnimalMessage } from "@/components/AnimalMessage";
@@ -9,12 +10,12 @@ import { DownloadModal } from "@/components/DownloadModal";
 import { BaseListbox } from "@/components/headless-ui/BaseListbox";
 
 export default function Application() {
-    const [isMounted, setIsMounted] = useState(false);
-
+    const { updateMessage } = useContext(MessageContext);
     const { animal, updateAnimal } = useContext(AnimalContext);
 
     useEffect(() => {
-        setIsMounted(true);
+        updateMessage("");
+        updateAnimal("cow");
     }, []);
 
     const listAnimals = [
@@ -29,26 +30,24 @@ export default function Application() {
     ];
 
     return (
-        isMounted && (
-            <main className="flex flex-col items-center">
-                <div className="min-w-1/2">
-                    <BaseListbox
-                        listItems={listAnimals}
-                        selected={animal}
-                        updateSelected={updateAnimal}
-                        customClasses="w-[21.5rem] mb-2"
-                    />
-                    <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
-                        <MessageField />
-                        <AnimalMessage />
-                    </div>
+        <main className="flex flex-col items-center">
+            <div className="min-w-1/2">
+                <BaseListbox
+                    listItems={listAnimals}
+                    selected={animal}
+                    updateSelected={updateAnimal}
+                    customClasses="w-[21.5rem] mb-2"
+                />
+                <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
+                    <MessageField />
+                    <AnimalMessage />
                 </div>
-                <div className="mt-4 flex gap-4">
-                    <ShareModal />
+            </div>
+            <div className="mt-4 flex gap-4">
+                <ShareModal />
 
-                    <DownloadModal />
-                </div>
-            </main>
-        )
+                <DownloadModal />
+            </div>
+        </main>
     );
 }

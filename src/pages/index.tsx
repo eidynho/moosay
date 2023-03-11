@@ -1,14 +1,9 @@
-import { AnimalMessage } from "@/components/AnimalMessage";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import { ArrowCircleUpRight } from "phosphor-react";
 
+import { AnimalMessage } from "@/components/AnimalMessage";
+
 export default function Home() {
-    const router = useRouter();
-
-    function redirectToApplication() {
-        router.push("/application");
-    }
-
     return (
         <header className="lg:max-w-5xl mx-auto h-3/4 flex">
             <div className="mx-6 w-full flex flex-col items-center justify-center gap-8 lg:gap-0 lg:flex-row lg:justify-between">
@@ -23,14 +18,14 @@ export default function Home() {
                     </p>
 
                     <div className="flex justify-center lg:justify-start">
-                        <button
-                            onClick={redirectToApplication}
+                        <Link
+                            href="/application"
                             className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-d-primary bg-secondary transition-all
                             hover:brightness-90"
                         >
                             <ArrowCircleUpRight size={24} weight="fill" />
                             Get started
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <AnimalMessage

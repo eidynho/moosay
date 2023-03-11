@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 export function NavBarComponent() {
     return (
         <nav className="flex items-center justify-between w-full px-8 sm:px-16 h-16">
-            <span className="font-bold">vacho.co</span>
+            <Link href="/" className="font-bold">
+                Moosay
+            </Link>
 
             <a
                 href="https://github.com/eidynho/moosay"
