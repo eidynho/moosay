@@ -1,11 +1,30 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AnimalContext } from "../contexts/AnimalContext";
 import { MessageContext } from "../contexts/MessageContext";
 import { cow, bat, cat, dog, dolphin, ducks, fish, tux } from "./AnimalsASCII";
 
-export function AnimalMessage() {
-    const { animal } = useContext(AnimalContext);
-    const { message } = useContext(MessageContext);
+interface AnimalMessageProps {
+    staticMessage?: string;
+    staticAnimal?: string;
+}
+
+export function AnimalMessage({
+    staticMessage,
+    staticAnimal,
+}: AnimalMessageProps) {
+    const { message, updateMessage } = useContext(MessageContext);
+    const { animal, updateAnimal } = useContext(AnimalContext);
+
+    useEffect(() => {
+        if (staticMessage) {
+            updateMessage(staticMessage);
+        }
+
+        if (staticAnimal) {
+            updateAnimal(staticAnimal);
+        }
+    }, [staticMessage, staticAnimal]);
+
     const emptyMessage = !message || message === "<p></p>";
 
     function maxRepeatMessageWall() {
