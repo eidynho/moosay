@@ -10,7 +10,9 @@ import {
 
 import { MessageContext } from "../contexts/MessageContext";
 import { AnimalContext } from "../contexts/AnimalContext";
+
 import { BaseModal } from "./headless-ui/BaseModal";
+import { encodeString } from "@/utils/encoderDecoder";
 
 export function ShareModal() {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +23,13 @@ export function ShareModal() {
     const { message } = useContext(MessageContext);
 
     useEffect(() => {
-        // generate link to share
         if (isOpen) {
-            const encodedMessage = encodeURI(message);
-            const encodedAnimal = encodeURI(animal);
-            const queryParams = `/share?message=${encodedMessage}&animal=${encodedAnimal}`;
+            // get encoded strings to prevent user to see message and animal before access link
+            const encodedMessage = encodeString(message);
+            const encodedAnimal = encodeString(animal);
+
+            // generate link to share
+            const queryParams = `/application/share?message=${encodedMessage}&animal=${encodedAnimal}`;
             setShareLink(document.location.origin + queryParams);
         }
 
