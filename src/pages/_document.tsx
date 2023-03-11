@@ -11,15 +11,25 @@ export default function Document() {
                     href="https://fonts.gstatic.com"
                     crossOrigin="anonymous"
                 />
-
                 <link
                     href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&family=Space+Mono&display=swap"
                     rel="stylesheet"
                 />
 
+                <link rel="icon" href="/favicon.ico" />
+
                 <style
                     id="stitches"
                     dangerouslySetInnerHTML={{ __html: getCssText() }}
+                />
+
+                <title>
+                    Moosay | Cowsay Generator - Create Funny ASCII Art in
+                    Seconds
+                </title>
+                <meta
+                    name="description"
+                    content="Use our free cowsay generator to create ASCII art with easy-to-use website. Get started now!"
                 />
             </Head>
             <body>
