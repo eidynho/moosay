@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
         <AnimalContextProvider>
             <MessageContextProvider>
-                <div className="md:container mx-auto h-screen">
+                <div className="md:container mx-auto">
                     <NavBarComponent />
                     <Component {...pageProps} />
                     <Analytics />
