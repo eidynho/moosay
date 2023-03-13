@@ -30,23 +30,25 @@ export default function Application() {
     ];
 
     return (
-        <main className="flex flex-col items-center">
-            <div className="min-w-1/2">
-                <BaseListbox
-                    listItems={listAnimals}
-                    selected={animal}
-                    updateSelected={updateAnimal}
-                    customClasses="w-[21.5rem] mb-2"
-                />
-                <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
-                    <MessageField />
-                    <AnimalMessage />
+        <main className="md:container mx-auto">
+            <div className="flex flex-col items-center">
+                <div className="min-w-1/2">
+                    <BaseListbox
+                        listItems={listAnimals}
+                        selected={animal}
+                        updateSelected={updateAnimal}
+                        customClasses="w-[21.5rem] mb-2"
+                    />
+                    <div className="flex flex-col md:flex-row items-start gap-4 md:gap-8">
+                        <MessageField />
+                        <AnimalMessage />
+                    </div>
                 </div>
-            </div>
-            <div className="mt-4 flex gap-4">
-                <ShareModal />
+                <div className="mt-4 flex gap-4">
+                    <ShareModal />
 
-                <DownloadModal />
+                    <DownloadModal />
+                </div>
             </div>
         </main>
     );

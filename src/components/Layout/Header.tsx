@@ -43,7 +43,7 @@ export function Header() {
                     <AnimalMessage
                         staticMessage="hello world, i am moosay     ~(=^‥^)ノ"
                         staticAnimal="cow"
-                        customStyles="px-4 py-8 max-w-xs text-start pointer-events-none rounded-lg border border-transparent bg-ghost bg-clip-padding transition-all bg-d-primary"
+                        customStyles="px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg border border-transparent bg-ghost bg-clip-padding transition-all bg-d-primary"
                     />
                 </GradientBox>
             </div>

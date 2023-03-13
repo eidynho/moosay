@@ -24,18 +24,20 @@ export default function Share() {
     }, [router.query]);
 
     return (
-        <main className="flex flex-col items-center">
-            <div className="min-w-1/2">
-                <Link
-                    href="/application"
-                    className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-secondary border border-secondary transition-all
+        <main className="md:container mx-auto">
+            <div className="flex flex-col items-center">
+                <div className="min-w-1/2">
+                    <Link
+                        href="/application"
+                        className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-secondary border border-secondary transition-all
                     hover:enabled:bg-secondary hover:enabled:text-d-primary
                     disabled:cursor-not-allowed disabled:brightness-75"
-                >
-                    <PaperPlaneTilt size={24} weight="bold" />
-                    <span>Send a message back</span>
-                </Link>
-                <AnimalMessage />
+                    >
+                        <PaperPlaneTilt size={24} weight="bold" />
+                        <span>Send a message back</span>
+                    </Link>
+                    <AnimalMessage />
+                </div>
             </div>
         </main>
     );
