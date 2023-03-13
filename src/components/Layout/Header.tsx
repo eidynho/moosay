@@ -13,8 +13,8 @@ export function Header() {
                     </h1>
                     <p className="my-8 text-lg">
                         Moosay is easy-to-use and flexible cowsay generator with
-                        multiple animals and free text to share with friends,
-                        download, have a laugh - whatever, really.
+                        multiple animals and custom messages to share with
+                        friends, download, have a laugh - whatever, really.
                     </p>
 
                     <div className="flex justify-center lg:justify-start">
