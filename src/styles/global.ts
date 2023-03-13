@@ -2,8 +2,8 @@ import { globalCss } from ".";
 
 export const globalStyles = globalCss({
     "::selection": {
-        backgroundColor: "$brand-secondary",
-        color: "$black",
+        backgroundColor: "$black",
+        color: "$white",
     },
 
     "::-webkit-scrollbar": {

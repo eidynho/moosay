@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowCircleUpRight } from "phosphor-react";
+import { GradientBox } from "../GradientBox";
 
 export function ThinkCreateHaveFun() {
     return (
@@ -53,25 +54,7 @@ export function ThinkCreateHaveFun() {
                     easy-to-use cowsay generator.
                 </p>
             </div>
-            <div className="relative">
-                <span
-                    aria-hidden="true"
-                    className="animate-gradient-text-fade-1 bg-gradient-to-bl
-                    from-[#007CF0] to-[#00DFD8] absolute h-full w-full -z-10 rounded-md
-                    before:content-[''] before:border-[0.75rem] before:border-solid before:border-transparent before:opacity-40 before:bg-clip-padding before:blur-xl before:h-full before:w-full before:absolute before:-z-10 before:bg-gradient-to-bl before:from-[#007CF0] before:to-[#00DFD8]"
-                ></span>
-                <span
-                    aria-hidden="true"
-                    className="animate-gradient-text-fade-2 bg-gradient-to-bl
-                    from-[#7928CA] to-[#FF0080] absolute h-full w-full -z-10 rounded-md
-                    before:content-[''] before:border-[0.75rem] before:border-solid before:border-transparent before:opacity-40 before:bg-clip-padding before:blur-xl before:h-full before:w-full before:absolute before:-z-10 before:bg-gradient-to-bl before:from-[#7928CA] before:to-[#FF0080]"
-                ></span>
-                <span
-                    aria-hidden="true"
-                    className="animate-gradient-text-fade-3 bg-gradient-to-bl
-                    from-[#FF4D4D] to-[#F9CB28] absolute h-full w-full -z-10 rounded-md
-                    before:content-[''] before:border-[0.75rem] before:border-solid before:border-transparent before:opacity-40 before:bg-clip-padding before:blur-xl before:h-full before:w-full before:absolute before:-z-10 before:bg-gradient-to-bl before:from-[#FF4D4D] before:to-[#F9CB28]"
-                ></span>
+            <GradientBox>
                 <Link
                     href="/application"
                     className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-l-primary border border-transparent bg-ghost bg-clip-padding transition-all"
@@ -79,7 +62,7 @@ export function ThinkCreateHaveFun() {
                     <ArrowCircleUpRight size={24} weight="fill" />
                     Get started
                 </Link>
-            </div>
+            </GradientBox>
         </section>
     );
 }

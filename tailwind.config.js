@@ -28,7 +28,7 @@ module.exports = {
                 "300%": "300%",
             },
             backgroundImage: {
-                ghost: "linear-gradient(to right, rgba(0,0,0,.75), rgba(0,0,0,.75))",
+                ghost: "linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.85))",
             },
             keyframes: {
                 "gradient-text-1": {

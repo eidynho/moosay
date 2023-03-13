@@ -6,11 +6,13 @@ import { cow, bat, cat, dog, dolphin, ducks, fish, tux } from "./AnimalsASCII";
 interface AnimalMessageProps {
     staticMessage?: string;
     staticAnimal?: string;
+    customStyles?: string;
 }
 
 export function AnimalMessage({
     staticMessage,
     staticAnimal,
+    customStyles,
 }: AnimalMessageProps) {
     const { message, updateMessage } = useContext(MessageContext);
     const { animal, updateAnimal } = useContext(AnimalContext);
@@ -57,7 +59,11 @@ export function AnimalMessage({
             {!emptyMessage ? (
                 <div
                     id="animalPicture"
-                    className="px-4 pb-8 max-w-xs text-start"
+                    className={`${
+                        customStyles
+                            ? customStyles
+                            : "px-4 pb-8 max-w-xs text-start"
+                    }`}
                 >
                     <div className="font-mono break-words whitespace-pre-wrap leading-6">
                         <>
