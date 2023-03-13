@@ -18,10 +18,10 @@ export function Header() {
                         </span>
                         Beta version
                     </div>
-                    <h1 className="text-4xl lg:text-5xl font-bold">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                         Create funny ASCII Art in seconds with Moosay
                     </h1>
-                    <p className="my-8 text-lg">
+                    <p className="text-base my-6 md:text-lg lg:text-lg lg:my-8">
                         Moosay is easy-to-use and flexible cowsay generator with
                         multiple animals and custom messages to share with
                         friends, download, have a laugh - whatever, really.

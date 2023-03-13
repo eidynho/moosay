@@ -24,21 +24,24 @@ const Card = ({ children, clockWise, customStyles }: CardProps) => {
 
 export function CardsExamples() {
     return (
-        <section className="flex flex-col gap-12 mx-20 mb-40">
-            <h2 className="text-center text-3xl lg:text-4xl font-bold text-l-primary">
+        <section className="flex flex-col gap-12 mx-20 mb-20 mt-16 md:mt-12 md:mb-40 lg:mt-0">
+            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-l-primary">
                 Customize as you want
             </h2>
             <div className="flex items-start justify-evenly">
                 <Card
                     clockWise
-                    customStyles="bg-secondary text-d-primary mt-12 -translate-x-6"
+                    customStyles="bg-secondary text-d-primary mt-12 -translate-x-6 hidden md:block"
                 >
                     <AnimalMessage
                         staticMessage="hello world"
                         staticAnimal="cow"
                     />
                 </Card>
-                <Card clockWise customStyles="bg-tertiary text-l-primary">
+                <Card
+                    clockWise
+                    customStyles="bg-tertiary text-l-primary hidden lg:block"
+                >
                     <AnimalMessage
                         staticMessage="hello world"
                         staticAnimal="cow"
@@ -46,7 +49,7 @@ export function CardsExamples() {
                 </Card>
                 <Card
                     clockWise={false}
-                    customStyles="bg-primary text-d-primary mt-6 translate-x-6"
+                    customStyles="bg-primary text-d-primary mt-6 md:translate-x-6"
                 >
                     <AnimalMessage
                         staticMessage="hello world"
@@ -55,7 +58,10 @@ export function CardsExamples() {
                 </Card>
             </div>
             <div className="flex items-start justify-evenly">
-                <Card clockWise customStyles="bg-primary text-d-primary mt-6">
+                <Card
+                    clockWise
+                    customStyles="bg-primary text-d-primary mt-6 -translate-x-8 hidden md:block"
+                >
                     <AnimalMessage
                         staticMessage="hello world"
                         staticAnimal="cow"
@@ -63,7 +69,7 @@ export function CardsExamples() {
                 </Card>
                 <Card
                     clockWise
-                    customStyles="bg-secondary text-d-primary mt-12"
+                    customStyles="bg-secondary text-d-primary mt-12 hidden lg:block"
                 >
                     <AnimalMessage
                         staticMessage="hello world"
@@ -72,7 +78,7 @@ export function CardsExamples() {
                 </Card>
                 <Card
                     clockWise={false}
-                    customStyles="bg-tertiary text-l-primary"
+                    customStyles="bg-tertiary text-l-primary md:translate-x-8"
                 >
                     <AnimalMessage
                         staticMessage="hello world"
