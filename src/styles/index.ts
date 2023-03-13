@@ -18,7 +18,7 @@ export const {
             primary: "#1E1919",
             secondary: "#262222",
 
-            "brand-primary": "#DE85DD",
+            "brand-primary": "#DE85DE",
             "brand-secondary": "#73DC8F",
             "brand-tertiary": "#4B78E6",
 

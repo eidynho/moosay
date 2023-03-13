@@ -9,6 +9,15 @@ export function Header() {
         <header className="lg:max-w-5xl mx-auto min-h-[80vh] flex">
             <div className="mx-6 mt-6 w-full flex flex-col items-center justify-center gap-8 lg:mt-0 lg:gap-0 lg:flex-row lg:justify-between">
                 <div className="sm:w-[36rem] text-l-primary">
+                    <div className="relative flex items-center gap-3 w-36 text-sm bg-d-secondary py-2 pl-2 mb-2 rounded-full">
+                        <span
+                            className="flex items-center justify-center w-7 h-7 text-d-primary rounded-full font-bold bg-primary
+                            before:content-[''] before:absolute before:animate-badge-ping before:w-7 before:h-7 before:bg-primary before:rounded-full"
+                        >
+                            β
+                        </span>
+                        Beta version
+                    </div>
                     <h1 className="text-4xl lg:text-5xl font-bold">
                         Create funny ASCII Art in seconds with Moosay
                     </h1>

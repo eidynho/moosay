@@ -16,13 +16,9 @@ module.exports = {
                 "l-primary": "#F5F5F1",
                 "l-secondary": "#EDEDEE",
 
-                primary: "#DE85DD",
+                primary: "#DE85DE",
                 secondary: "#73DC8F",
                 tertiary: "#4B78E6",
-            },
-            boxShadow: {
-                "custom-button": "4px 4px #DE85DD",
-                "active-custom-button": "0 0 #DE85DD",
             },
             backgroundSize: {
                 "300%": "300%",
@@ -55,6 +51,26 @@ module.exports = {
                         opacity: "1",
                     },
                 },
+
+                "badge-ping": {
+                    "0%": {
+                        height: "1.5rem",
+                        width: "1.5rem",
+                        opacity: "1",
+                    },
+                    "10%": {
+                        height: "2.5rem",
+                        width: "2.5rem",
+                    },
+                    "50%": {
+                        height: "2.5rem",
+                        width: "2.5rem",
+                        opacity: "0",
+                    },
+                    "100%": {
+                        opacity: 0,
+                    },
+                },
             },
             animation: {
                 "gradient-text-fade-1":
@@ -63,6 +79,9 @@ module.exports = {
                     "gradient-text-2 8s ease-in-out infinite",
                 "gradient-text-fade-3":
                     "gradient-text-3 8s ease-in-out infinite",
+
+                "badge-ping":
+                    "badge-ping 4s cubic-bezier(.15,.27,.58,1) infinite",
             },
         },
     },
