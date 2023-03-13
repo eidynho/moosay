@@ -3,8 +3,8 @@ module.exports = {
     content: ["./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         fontFamily: {
-            manrope: ["Manrope, sans-serif"],
-            mono: ["Space Mono", "ui-monospace", "SFMono-Regular"],
+            manrope: ["var(--font-manrope), sans-serif"],
+            mono: ["var(--font-space-mono)", "ui-monospace", "SFMono-Regular"],
         },
         extend: {
             colors: {
