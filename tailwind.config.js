@@ -16,7 +16,7 @@ module.exports = {
                 "l-primary": "#F5F5F1",
                 "l-secondary": "#EDEDEE",
 
-                primary: "#DE85DE",
+                primary: "#FA9BFA",
                 secondary: "#73DC8F",
                 tertiary: "#4B78E6",
             },
@@ -69,6 +69,15 @@ module.exports = {
                     },
                     "100%": {
                         opacity: 0,
+                    },
+                },
+
+                parallax: {
+                    "0%": {
+                        transform: "translateY(0)",
+                    },
+                    "100%": {
+                        transform: "translateY(-10%)",
                     },
                 },
             },

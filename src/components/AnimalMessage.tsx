@@ -14,22 +14,15 @@ export function AnimalMessage({
     staticAnimal,
     customStyles,
 }: AnimalMessageProps) {
-    const { message, updateMessage } = useContext(MessageContext);
-    const { animal, updateAnimal } = useContext(AnimalContext);
+    const { message } = useContext(MessageContext);
+    const { animal } = useContext(AnimalContext);
 
-    useEffect(() => {
-        if (staticMessage) {
-            updateMessage(staticMessage);
-        }
-
-        if (staticAnimal) {
-            updateAnimal(staticAnimal);
-        }
-    }, [staticMessage, staticAnimal]);
-
-    const emptyMessage = !message || message === "<p></p>";
+    const emptyMessage = (!message && !staticMessage) || message === "<p></p>";
 
     function maxRepeatMessageWall() {
+        if (staticMessage) {
+            return staticMessage.length <= 28 ? staticMessage.length + 1 : 29;
+        }
         return message.length <= 28 ? message.length + 1 : 29;
     }
 
@@ -70,7 +63,9 @@ export function AnimalMessage({
                             <div>{"_".repeat(maxRepeatMessageWall())}</div>
                             <span
                                 className="block max-h-[36rem] overflow-y-auto pb-1"
-                                dangerouslySetInnerHTML={{ __html: message }}
+                                dangerouslySetInnerHTML={{
+                                    __html: staticMessage ?? message,
+                                }}
                             ></span>
                             <div>{"-".repeat(maxRepeatMessageWall())}</div>
                             {animalInScreen()}
@@ -79,7 +74,9 @@ export function AnimalMessage({
                 </div>
             ) : (
                 <div className="font-mono flex align-center justify-center w-80 h-60 border border-dashed rounded-lg">
-                    <span className="my-auto">{animal} will appear here</span>
+                    <span className="my-auto">
+                        {staticAnimal ?? animal} will appear here
+                    </span>
                 </div>
             )}
         </>
