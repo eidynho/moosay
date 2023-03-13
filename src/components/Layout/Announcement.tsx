@@ -6,6 +6,8 @@ export function Announcement() {
         "visible" | "hidden"
     >("hidden");
 
+    const isVisible = announcementVisibility === "visible";
+
     useEffect(() => {
         const announcementStorage = localStorage.getItem(
             "moosay-announcement-1.0.0",
@@ -24,26 +26,30 @@ export function Announcement() {
     }
 
     return (
-        announcementVisibility === "visible" && (
-            <div className="relative flex items-center justify-center h-12 bg-primary text-d-primary font-bold">
-                <div className="flex items-center gap-2">
-                    <span>Moosay is under development —</span>
-                    <a
-                        href="https://github.com/eidynho/moosay"
-                        target="_blank"
-                        className="flex items-center gap-2 hover:underline"
-                    >
-                        Contribute here
-                        <ArrowSquareOut size={24} />
-                    </a>
-                </div>
-                <X
-                    size={16}
-                    weight="bold"
-                    onClick={handleCloseAnnouncement}
-                    className="absolute right-4 cursor-pointer"
-                />
+        <div
+            className={`${
+                !isVisible
+                    ? "hidden"
+                    : "relative flex items-center justify-center h-12 bg-primary text-d-primary font-bold"
+            }`}
+        >
+            <div className="flex items-center gap-2">
+                <span>Moosay is under development —</span>
+                <a
+                    href="https://github.com/eidynho/moosay"
+                    target="_blank"
+                    className="flex items-center gap-2 hover:underline"
+                >
+                    Contribute here
+                    <ArrowSquareOut size={24} />
+                </a>
             </div>
-        )
+            <X
+                size={16}
+                weight="bold"
+                onClick={handleCloseAnnouncement}
+                className="absolute right-4 cursor-pointer"
+            />
+        </div>
     );
 }
