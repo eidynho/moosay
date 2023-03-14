@@ -1,6 +1,7 @@
 import { AppProps } from "next/app";
-import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 import { Manrope, Space_Mono } from "@next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import { AnimalContextProvider } from "@/contexts/AnimalContext";
 import { MessageContextProvider } from "@/contexts/MessageContext";
@@ -27,17 +28,25 @@ const spaceMono = Space_Mono({
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <AnimalContextProvider>
-            <MessageContextProvider>
-                <main
-                    className={`${manrope.variable} font-manrope ${spaceMono.variable} font-space-mono`}
-                >
-                    <Announcement />
-                    <NavBarComponent />
-                    <Component {...pageProps} />
-                    <Analytics />
-                </main>
-            </MessageContextProvider>
-        </AnimalContextProvider>
+        <>
+            <Head>
+                <title>
+                    Moosay | Cowsay Generator - Create Funny ASCII Art in
+                    Seconds
+                </title>
+            </Head>
+            <AnimalContextProvider>
+                <MessageContextProvider>
+                    <main
+                        className={`${manrope.variable} font-manrope ${spaceMono.variable} font-space-mono`}
+                    >
+                        <Announcement />
+                        <NavBarComponent />
+                        <Component {...pageProps} />
+                        <Analytics />
+                    </main>
+                </MessageContextProvider>
+            </AnimalContextProvider>
+        </>
     );
 }

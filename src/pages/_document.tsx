@@ -12,10 +12,6 @@ export default function Document() {
                     dangerouslySetInnerHTML={{ __html: getCssText() }}
                 />
 
-                <title>
-                    Moosay | Cowsay Generator - Create Funny ASCII Art in
-                    Seconds
-                </title>
                 <meta
                     name="description"
                     content="Use our free cowsay generator to create ASCII art with easy-to-use website. Get started now!"
