@@ -1,4 +1,4 @@
-import { ArrowSquareOut, X } from "phosphor-react";
+import { X } from "phosphor-react";
 import { useEffect, useState } from "react";
 
 export function Announcement() {
@@ -30,25 +30,23 @@ export function Announcement() {
             className={`${
                 !isVisible
                     ? "hidden"
-                    : "relative flex items-center justify-center h-12 bg-primary text-d-primary font-bold"
+                    : "relative flex items-center justify-center h-12 bg-primary transition-all hover:brightness-90"
             }`}
         >
             <div className="flex items-center gap-2">
-                <span>Moosay is under development —</span>
                 <a
                     href="https://github.com/eidynho/moosay"
                     target="_blank"
-                    className="flex items-center gap-2 hover:underline"
+                    className="flex items-center gap-2 font-bold text-sm sm:text-base text-d-primary hover:underline"
                 >
-                    Contribute here
-                    <ArrowSquareOut size={24} />
+                    Moosay is open source — Contribute here 🎈
                 </a>
             </div>
             <X
                 size={16}
                 weight="bold"
                 onClick={handleCloseAnnouncement}
-                className="absolute right-4 cursor-pointer"
+                className="absolute right-4 cursor-pointer text-d-primary"
             />
         </div>
     );
