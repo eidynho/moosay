@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AnimalContext } from "../contexts/AnimalContext";
 import { MessageContext } from "../contexts/MessageContext";
 import { cow, bat, cat, dog, dolphin, ducks, fish, tux } from "./AnimalsASCII";
@@ -55,10 +55,10 @@ export function AnimalMessage({
                     className={`${
                         customStyles
                             ? customStyles
-                            : "px-4 pb-8 max-w-xs text-start"
+                            : "px-2 pb-8 max-w-xs text-start"
                     }`}
                 >
-                    <div className="font-mono break-words whitespace-pre-wrap leading-6">
+                    <div className="font-mono break-words whitespace-pre-wrap leading-6 w-[17.75rem]">
                         <>
                             <div>{"_".repeat(maxRepeatMessageWall())}</div>
                             <span
@@ -73,7 +73,7 @@ export function AnimalMessage({
                     </div>
                 </div>
             ) : (
-                <div className="font-mono flex align-center justify-center w-80 h-60 border border-dashed rounded-lg">
+                <div className="font-mono flex align-center justify-center w-[18.75rem] h-60 border border-dashed rounded-lg">
                     <span className="my-auto">
                         {staticAnimal ?? animal} will appear here
                     </span>

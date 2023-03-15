@@ -3,7 +3,7 @@ import { Image } from "phosphor-react";
 import html2canvas from "html2canvas";
 
 import { MessageContext } from "@/contexts/MessageContext";
-import { BaseModal } from "./headless-ui/BaseModal";
+import { BaseModal } from "../headless-ui/BaseModal";
 
 export function DownloadModal() {
     const [isOpen, setIsOpen] = useState(false);
@@ -53,8 +53,7 @@ export function DownloadModal() {
             <button
                 disabled={!message || message === "<p></p>"}
                 onClick={handleToggleModal}
-                className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-secondary border border-secondary transition-all
-                hover:enabled:bg-secondary hover:enabled:text-d-primary
+                className="text-gray-900 group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm hover:bg-secondary hover:text-white
                 disabled:cursor-not-allowed disabled:brightness-75"
             >
                 <Image size={24} />

@@ -8,10 +8,10 @@ import {
     WhatsappLogo,
 } from "phosphor-react";
 
-import { MessageContext } from "../contexts/MessageContext";
-import { AnimalContext } from "../contexts/AnimalContext";
+import { MessageContext } from "../../contexts/MessageContext";
+import { AnimalContext } from "../../contexts/AnimalContext";
 
-import { BaseModal } from "./headless-ui/BaseModal";
+import { BaseModal } from "../headless-ui/BaseModal";
 import { encodeString } from "@/utils/encoderDecoder";
 
 export function ShareModal() {
@@ -53,8 +53,7 @@ export function ShareModal() {
         <>
             <button
                 onClick={handleToggleModal}
-                className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-gray-300 border border-gray-300 transition-all
-                hover:bg-gray-300 hover:text-d-primary"
+                className="text-gray-900 group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm hover:bg-secondary hover:text-white"
             >
                 <Share size={24} />
                 <span>Share</span>

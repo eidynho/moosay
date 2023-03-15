@@ -22,93 +22,104 @@ const MenuBar = ({ editor }: EditorContentProps) => {
         return null;
     }
 
+    const baseButtonClass =
+        "transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80";
+    const baseButtonActiveClass = "text-d-primary bg-gray-300 bg-opacity-80";
+    const baseButtonNotActiveClass = "text-l-primary";
+
+    const baseIconButtonClass = "w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6";
+
     return (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1 sm:gap-2">
             <button
                 onClick={() => editor.chain().focus().toggleBold().run()}
                 disabled={!editor.can().chain().focus().toggleBold().run()}
-                className={`transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80 ${
+                className={`${baseButtonClass} ${
                     editor.isActive("bold")
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
+                        ? baseButtonActiveClass
+                        : baseButtonNotActiveClass
                 }`}
             >
-                <TextBolder size={24} weight="bold" />
+                <TextBolder className={baseIconButtonClass} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleItalic().run()}
                 disabled={!editor.can().chain().focus().toggleItalic().run()}
-                className={`transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80 ${
+                className={`${baseButtonClass} ${
                     editor.isActive("italic")
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
+                        ? baseButtonActiveClass
+                        : baseButtonNotActiveClass
                 }`}
             >
-                <TextItalic size={24} weight="bold" />
+                <TextItalic className={baseIconButtonClass} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleStrike().run()}
                 disabled={!editor.can().chain().focus().toggleStrike().run()}
-                className={`transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80 ${
+                className={`${baseButtonClass} ${
                     editor.isActive("strike")
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
+                        ? baseButtonActiveClass
+                        : baseButtonNotActiveClass
                 }`}
             >
-                <TextStrikethrough size={24} weight="bold" />
+                <TextStrikethrough
+                    className={baseIconButtonClass}
+                    weight="bold"
+                />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleCode().run()}
                 disabled={!editor.can().chain().focus().toggleCode().run()}
-                className={`transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80 ${
+                className={`${baseButtonClass} ${
                     editor.isActive("code")
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
+                        ? baseButtonActiveClass
+                        : baseButtonNotActiveClass
                 }`}
             >
-                <Code size={24} weight="bold" />
+                <Code className={baseIconButtonClass} weight="bold" />
             </button>
             <button
                 onClick={() =>
                     editor.chain().focus().toggleHeading({ level: 1 }).run()
                 }
-                className={
-                    editor.isActive("heading", { level: 1 })
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
-                }
+                className={`${baseButtonClass}
+                    ${
+                        editor.isActive("heading", { level: 1 })
+                            ? baseButtonActiveClass
+                            : baseButtonNotActiveClass
+                    }`}
             >
-                <TextHOne size={24} weight="bold" />
+                <TextHOne className={baseIconButtonClass} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleOrderedList().run()}
-                className={`transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80 ${
+                className={`${baseButtonClass} ${
                     editor.isActive("orderedList")
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
+                        ? baseButtonActiveClass
+                        : baseButtonNotActiveClass
                 }`}
             >
-                <ListNumbers size={24} weight="bold" />
+                <ListNumbers className={baseIconButtonClass} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleBulletList().run()}
-                className={`transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80 ${
+                className={`${baseButtonClass} ${
                     editor.isActive("bulletList")
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
+                        ? baseButtonActiveClass
+                        : baseButtonNotActiveClass
                 }`}
             >
-                <ListDashes size={24} weight="bold" />
+                <ListDashes className={baseIconButtonClass} weight="bold" />
             </button>
             <button
                 onClick={() => editor.chain().focus().toggleBlockquote().run()}
-                className={`transition-all p-2 rounded hover:text-d-primary hover:bg-gray-300 hover:bg-opacity-80 ${
+                className={`${baseButtonClass} ${
                     editor.isActive("blockquote")
-                        ? "text-d-primary bg-gray-300 bg-opacity-80"
-                        : "text-l-primary"
+                        ? baseButtonActiveClass
+                        : baseButtonNotActiveClass
                 }`}
             >
-                <Quotes size={24} weight="bold" />
+                <Quotes className={baseIconButtonClass} weight="bold" />
             </button>
         </div>
     );
@@ -132,7 +143,7 @@ export function Tiptap({ placeholder, updateContent }: TiptapProps) {
         ],
         editorProps: {
             attributes: {
-                class: "font-mono h-40 overflow-auto w-96",
+                class: "font-mono h-40 overflow-auto text-sm lg:text-base max-w-full w-full lg:w-[30rem] xl:w-[46rem]",
             },
         },
         onUpdate({ editor }) {
@@ -143,9 +154,9 @@ export function Tiptap({ placeholder, updateContent }: TiptapProps) {
     });
 
     return (
-        <section className="flex flex-col border rounded-lg py-4 px-5">
+        <section className="flex flex-col border rounded-lg mx-2 py-4 px-5 max-w-[24rem] lg:max-w-[30rem] xl:max-w-[46rem]">
             <EditorContent editor={editor} />
-            <div className="w-full h-[1px] border-t border-[#999] mb-4 mt-3"></div>
+            <div className="w-full h-[1px] border-t border-[#999] mb-3 mt-2 lg:mb-4 lg:mt-3"></div>
             <MenuBar editor={editor} />
         </section>
     );
