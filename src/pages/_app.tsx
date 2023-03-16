@@ -14,13 +14,13 @@ import { globalStyles } from "../styles/global";
 
 globalStyles();
 
-const manrope = Manrope({
+export const manrope = Manrope({
     subsets: ["latin"],
     weight: ["200", "300", "400", "500", "600", "700", "800"],
     variable: "--font-manrope",
 });
 
-const spaceMono = Space_Mono({
+export const spaceMono = Space_Mono({
     subsets: ["latin"],
     weight: ["400"],
     variable: "--font-space-mono",

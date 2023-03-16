@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { MessageContext } from "@/contexts/MessageContext";
 import { AnimalContext } from "@/contexts/AnimalContext";
@@ -10,9 +10,23 @@ import { AppOptionsDropdown } from "@/components/AppOptionsDropdown";
 
 import { BaseListbox } from "@/components/headless-ui/BaseListbox";
 
+export type AnimalStylesType = {
+    color: string;
+    border: string;
+    background: string;
+};
+
 export default function Application() {
     const { updateMessage } = useContext(MessageContext);
     const { animal, updateAnimal } = useContext(AnimalContext);
+
+    const [animalStyles, setAnimalStyles] = useState<AnimalStylesType>({
+        color: "text-l-primary",
+        border: "border-d-primary",
+        background: "bg-d-primary",
+    });
+
+    const animalStylesInClassFormat = Object.values(animalStyles).join(" ");
 
     useEffect(() => {
         updateMessage("");
@@ -44,11 +58,16 @@ export default function Application() {
                                     updateSelected={updateAnimal}
                                     customClasses="w-[12rem] mb-2"
                                 /> */}
-                                <CustomizeModal />
+                                <CustomizeModal
+                                    customStyles={animalStylesInClassFormat}
+                                    setAnimalStyles={setAnimalStyles}
+                                />
                                 <AppOptionsDropdown />
                             </div>
                         </div>
-                        <AnimalMessage />
+                        <AnimalMessage
+                            customStyles={`${animalStylesInClassFormat} px-3 py-2 rounded-lg max-w-xs`}
+                        />
                     </div>
                 </div>
                 <div className="mt-4 flex gap-4"></div>

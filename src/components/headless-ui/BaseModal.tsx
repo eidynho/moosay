@@ -1,6 +1,7 @@
 import { Fragment, ReactNode } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { X } from "phosphor-react";
+import { spaceMono } from "@/pages/_app";
 
 interface BaseModalTypes {
     children: ReactNode;
@@ -24,7 +25,7 @@ export function BaseModal({
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog
                     as="div"
-                    className="relative z-10"
+                    className={`relative z-10 ${spaceMono.variable}`}
                     onClose={toggleModal}
                 >
                     <Transition.Child

@@ -127,7 +127,7 @@ const MenuBar = ({ editor }: EditorContentProps) => {
 
 export function Tiptap({ placeholder, updateContent }: TiptapProps) {
     const editor = useEditor({
-        content: ``,
+        content: "",
         extensions: [
             StarterKit.configure({
                 bulletList: {
