@@ -26,7 +26,6 @@ export function CustomizeModal({
             color: newColor,
         }));
     }
-
     const animalColorsList = [
         {
             className: "text-primary",
@@ -34,6 +33,40 @@ export function CustomizeModal({
         },
         {
             className: "text-black",
+            iconColor: "bg-black",
+        },
+    ];
+
+    function updateBorderColor(newColor: string) {
+        setAnimalStyles((oldState: AnimalStylesType) => ({
+            ...oldState,
+            border: newColor,
+        }));
+    }
+    const borderColorsList = [
+        {
+            className: "border border-primary",
+            iconColor: "bg-primary",
+        },
+        {
+            className: "border border-black",
+            iconColor: "bg-black",
+        },
+    ];
+
+    function updateBgColor(newColor: string) {
+        setAnimalStyles((oldState: AnimalStylesType) => ({
+            ...oldState,
+            background: newColor,
+        }));
+    }
+    const bgColorsList = [
+        {
+            className: "bg-primary",
+            iconColor: "bg-primary",
+        },
+        {
+            className: "bg-black",
             iconColor: "bg-black",
         },
     ];
@@ -59,8 +92,8 @@ export function CustomizeModal({
                 {/* Modal body */}
                 <div className="p-6 flex flex-col items-center gap-6 text-d-primary">
                     <AnimalMessage
-                        staticMessage="moo..."
-                        customStyles={`${customStyles} px-3 py-2 rounded-lg max-w-xs`}
+                        staticMessage="moo-la-la..."
+                        customStyles={`${customStyles} px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg border`}
                     />
                     <div className="bg-red-100 rounded-3xl px-8 py-6">
                         <h4 className="font-bold mb-3">Animal color</h4>
@@ -76,7 +109,7 @@ export function CustomizeModal({
                             ))}
                             <div
                                 className="w-10 h-10 rounded-full bg-gray-200 cursor-pointer flex items-center justify-center text-d-primary"
-                                title="Adicionar"
+                                title="Add custom color"
                             >
                                 <Plus size={16} />
                             </div>
@@ -86,17 +119,18 @@ export function CustomizeModal({
                     <div className="bg-red-100 rounded-3xl px-8 py-6">
                         <h4 className="font-bold mb-3">Border color</h4>
                         <div className="flex items-center gap-3">
-                            <div
-                                className="w-10 h-10 rounded-full bg-primary cursor-pointer"
-                                title="#FA9BFA"
-                            ></div>
-                            <div
-                                className="w-10 h-10 rounded-full bg-black cursor-pointer"
-                                title="#000"
-                            ></div>
+                            {borderColorsList.map((item, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() =>
+                                        updateBorderColor(item.className)
+                                    }
+                                    className={`${item.iconColor} w-10 h-10 rounded-full cursor-pointer`}
+                                ></button>
+                            ))}
                             <div
                                 className="w-10 h-10 rounded-full bg-gray-200 cursor-pointer flex items-center justify-center text-d-primary"
-                                title="Adicionar"
+                                title="Add custom color"
                             >
                                 <Plus size={16} />
                             </div>
@@ -106,17 +140,18 @@ export function CustomizeModal({
                     <div className="bg-red-100 rounded-3xl px-8 py-6">
                         <h4 className="font-bold mb-3">Background color</h4>
                         <div className="flex items-center gap-3">
-                            <div
-                                className="w-10 h-10 rounded-full bg-primary cursor-pointer"
-                                title="#FA9BFA"
-                            ></div>
-                            <div
-                                className="w-10 h-10 rounded-full bg-black cursor-pointer"
-                                title="#000"
-                            ></div>
+                            {bgColorsList.map((item, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() =>
+                                        updateBgColor(item.className)
+                                    }
+                                    className={`${item.iconColor} w-10 h-10 rounded-full cursor-pointer`}
+                                ></button>
+                            ))}
                             <div
                                 className="w-10 h-10 rounded-full bg-gray-200 cursor-pointer flex items-center justify-center text-d-primary"
-                                title="Adicionar"
+                                title="Add custom color"
                             >
                                 <Plus size={16} />
                             </div>

@@ -66,7 +66,7 @@ export default function Application() {
                             </div>
                         </div>
                         <AnimalMessage
-                            customStyles={`${animalStylesInClassFormat} px-3 py-2 rounded-lg max-w-xs`}
+                            customStyles={`${animalStylesInClassFormat} px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg border`}
                         />
                     </div>
                 </div>

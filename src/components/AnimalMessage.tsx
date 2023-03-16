@@ -17,7 +17,7 @@ export function AnimalMessage({
     const { message } = useContext(MessageContext);
     const { animal } = useContext(AnimalContext);
 
-    const emptyMessage = (!message && !staticMessage) || message === "<p></p>";
+    const emptyMessage = (!message || message === "<p></p>") && !staticMessage;
 
     function maxRepeatMessageWall() {
         if (staticMessage) {
@@ -55,7 +55,7 @@ export function AnimalMessage({
                     className={`${
                         customStyles
                             ? customStyles
-                            : "px-2 pb-8 max-w-xs text-start"
+                            : "px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg"
                     }`}
                 >
                     <div className="font-mono break-words whitespace-pre-wrap leading-6 w-[17.75rem]">
@@ -73,7 +73,7 @@ export function AnimalMessage({
                     </div>
                 </div>
             ) : (
-                <div className="font-mono flex align-center justify-center w-[18.75rem] h-60 border border-dashed rounded-lg">
+                <div className="font-mono flex align-center justify-center w-[19.85rem] h-64 border border-dashed rounded-lg">
                     <span className="my-auto">
                         {staticAnimal ?? animal} will appear here
                     </span>
