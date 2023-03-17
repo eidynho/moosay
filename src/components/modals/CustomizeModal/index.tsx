@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction, useState } from "react";
-import { Palette, Plus } from "phosphor-react";
+import { Palette } from "phosphor-react";
 
 import { BaseModal } from "../../headless-ui/BaseModal";
 import { AnimalMessage } from "../../AnimalMessage";
 import { AnimalStylesType } from "@/pages/application";
 import { GradientBox } from "../../GradientBox";
-import { AnimalColor } from "./animalColor";
-import { BorderColor } from "./BorderColor";
+import { AnimalColor } from "./AnimalColor";
 import { BackgroundColor } from "./BackgroundColor";
+import { BorderColor } from "./BorderColor";
 
 interface CustomizeModalProps {
     customStyles: string;

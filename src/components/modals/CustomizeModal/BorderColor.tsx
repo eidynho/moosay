@@ -56,24 +56,24 @@ const borderColorsList = [
         iconColor: "from-indigo-200 to-indigo-300",
     },
     {
-        className: "border border-violet-300",
-        iconColor: "from-violet-300 to-violet-400",
+        className: "border border-violet-200",
+        iconColor: "from-violet-200 to-violet-300",
     },
     {
-        className: "border border-purple-300",
-        iconColor: "from-purple-300 to-purple-400",
+        className: "border border-purple-200",
+        iconColor: "from-purple-200 to-purple-300",
     },
     {
-        className: "border border-fuchsia-300",
-        iconColor: "from-fuchsia-300 to-fuchsia-400",
+        className: "border border-fuchsia-200",
+        iconColor: "from-fuchsia-200 to-fuchsia-300",
     },
     {
-        className: "border border-pink-300",
-        iconColor: "from-pink-300 to-pink-400",
+        className: "border border-pink-200",
+        iconColor: "from-pink-200 to-pink-300",
     },
     {
-        className: "border border-rose-300",
-        iconColor: "from-rose-300 to-rose-400",
+        className: "border border-rose-200",
+        iconColor: "from-rose-200 to-rose-300",
     },
 ];
 
