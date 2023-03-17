@@ -85,8 +85,7 @@ interface BackgroundColorProps {
 
 export function BackgroundColor({ updateBgColor }: BackgroundColorProps) {
     return (
-        <div className="rounded-3xl max-w-2xl py-1">
-            <h4 className="font-bold mb-3">Background color</h4>
+        <div className="max-w-2xl py-1">
             <div className="flex flex-wrap items-center gap-3">
                 <GradientBox>
                     <div

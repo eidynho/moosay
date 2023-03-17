@@ -85,8 +85,7 @@ interface AnimalColorProps {
 
 export function AnimalColor({ updateAnimalColor }: AnimalColorProps) {
     return (
-        <div className="rounded-3xl max-w-2xl py-1">
-            <h4 className="font-bold mb-3">Animal color</h4>
+        <div className="max-w-2xl py-1">
             <div className="flex flex-wrap items-center gap-3">
                 {animalColorsList.map((item, index) => (
                     <button

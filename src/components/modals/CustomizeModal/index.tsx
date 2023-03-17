@@ -5,9 +5,10 @@ import { BaseModal } from "../../headless-ui/BaseModal";
 import { AnimalMessage } from "../../AnimalMessage";
 import { AnimalStylesType } from "@/pages/application";
 import { GradientBox } from "../../GradientBox";
-import { AnimalColor } from "./AnimalColor";
-import { BackgroundColor } from "./BackgroundColor";
-import { BorderColor } from "./BorderColor";
+import { AnimalColor } from "./CustomizeColors/AnimalColor";
+import { BackgroundColor } from "./CustomizeColors/BackgroundColor";
+import { BorderColor } from "./CustomizeColors/BorderColor";
+import { CustomizeColors } from "./CustomizeColors";
 
 interface CustomizeModalProps {
     customStyles: string;
@@ -83,9 +84,11 @@ export function CustomizeModal({
                         />
                     )}
 
-                    <AnimalColor updateAnimalColor={updateAnimalColor} />
-                    <BorderColor updateBorderColor={updateBorderColor} />
-                    <BackgroundColor updateBgColor={updateBgColor} />
+                    <CustomizeColors
+                        updateAnimalColor={updateAnimalColor}
+                        updateBorderColor={updateBorderColor}
+                        updateBgColor={updateBgColor}
+                    />
                 </div>
                 <div className="w-full flex justify-end text-d-primary">
                     <button
