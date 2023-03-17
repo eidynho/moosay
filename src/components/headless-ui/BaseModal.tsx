@@ -54,18 +54,18 @@ export function BaseModal({
                                 <Dialog.Panel
                                     className={`${
                                         size ? size : "max-w-md"
-                                    } w-full transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all`}
+                                    } w-full transform overflow-hidden rounded-2xl bg-d-primary/70 backdrop-blur text-l-primary p-6 text-left align-middle shadow-xl transition-all`}
                                 >
                                     <div className="flex items-center justify-between">
                                         <Dialog.Title
                                             as="h3"
-                                            className="text-lg font-medium leading-6 text-gray-900"
+                                            className="text-lg font-medium leading-6"
                                         >
                                             {title}
                                         </Dialog.Title>
                                         <button
                                             onClick={toggleModal}
-                                            className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                                            className="text-l-primary bg-transparent hover:bg-gray-100/10 hover:text-gray-100 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                                             data-modal-hide="defaultModal"
                                         >
                                             <X size={24} />

@@ -60,6 +60,7 @@ export default function Application() {
                                 /> */}
                                 <CustomizeModal
                                     customStyles={animalStylesInClassFormat}
+                                    animalStyles={animalStyles}
                                     setAnimalStyles={setAnimalStyles}
                                 />
                                 <AppOptionsDropdown />

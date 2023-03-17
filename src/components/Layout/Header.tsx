@@ -7,7 +7,7 @@ import { GradientBox } from "../GradientBox";
 export function Header() {
     return (
         <header className="lg:max-w-5xl mx-auto min-h-[80vh] flex">
-            <div className="mx-6 mt-6 w-full flex flex-col items-center justify-center gap-8 lg:mt-0 lg:gap-0 lg:flex-row lg:justify-between">
+            <div className="mx-6 mt-6 w-full flex flex-col items-center justify-center gap-8 lg:mx-0 lg:mt-0 lg:gap-0 lg:flex-row lg:justify-between">
                 <div className="sm:w-[36rem] text-l-primary">
                     <div className="relative flex items-center gap-3 w-36 text-sm bg-d-secondary py-2 pl-2 mb-2 rounded-full">
                         <span
