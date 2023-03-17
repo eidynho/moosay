@@ -85,7 +85,7 @@ interface BackgroundColorProps {
 
 export function BackgroundColor({ updateBgColor }: BackgroundColorProps) {
     return (
-        <div className="rounded-3xl px-8 py-6">
+        <div className="rounded-3xl max-w-2xl py-1">
             <h4 className="font-bold mb-3">Background color</h4>
             <div className="flex flex-wrap items-center gap-3">
                 <GradientBox>
@@ -95,7 +95,7 @@ export function BackgroundColor({ updateBgColor }: BackgroundColorProps) {
                                 "border border-transparent bg-clip-padding transition-all",
                             )
                         }
-                        className="w-12 h-12 cursor-pointer border border-transparent bg-clip-padding transition-all"
+                        className="w-11 h-11 sm:w-12 sm:h-12 cursor-pointer border border-transparent bg-clip-padding transition-all"
                         title="Add custom color"
                     ></div>
                 </GradientBox>
@@ -106,7 +106,7 @@ export function BackgroundColor({ updateBgColor }: BackgroundColorProps) {
                                 "border border-transparent bg-ghost bg-clip-padding transition-all",
                             )
                         }
-                        className="w-12 h-12 rounded-md cursor-pointer border border-transparent bg-ghost bg-clip-padding transition-all"
+                        className="w-11 h-11 sm:w-12 sm:h-12 rounded-md cursor-pointer border border-transparent bg-ghost bg-clip-padding transition-all"
                         title="Add custom color"
                     ></div>
                 </GradientBox>
@@ -116,7 +116,7 @@ export function BackgroundColor({ updateBgColor }: BackgroundColorProps) {
                         onClick={() => updateBgColor(item.className)}
                         className={`${item.iconColor} inline-flex p-0.5 rounded-md group bg-gradient-to-br`}
                     >
-                        <span className="w-11 h-11 transition-all ease-in bg-d-primary rounded-md bg-opacity-0"></span>
+                        <span className="w-10 h-10 sm:w-11 sm:h-11 transition-all ease-in bg-d-primary rounded-md bg-opacity-0"></span>
                     </button>
                 ))}
             </div>

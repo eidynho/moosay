@@ -85,7 +85,7 @@ interface AnimalColorProps {
 
 export function AnimalColor({ updateAnimalColor }: AnimalColorProps) {
     return (
-        <div className="rounded-3xl px-8 py-6">
+        <div className="rounded-3xl max-w-2xl py-1">
             <h4 className="font-bold mb-3">Animal color</h4>
             <div className="flex flex-wrap items-center gap-3">
                 {animalColorsList.map((item, index) => (
@@ -94,7 +94,7 @@ export function AnimalColor({ updateAnimalColor }: AnimalColorProps) {
                         onClick={() => updateAnimalColor(item.className)}
                         className={`${item.iconColor} inline-flex p-0.5 rounded-md group bg-gradient-to-br`}
                     >
-                        <span className="flex items-center justify-center w-11 h-11 transition-all ease-in bg-d-primary rounded-md group-hover:bg-opacity-0">
+                        <span className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 transition-all ease-in bg-d-primary rounded-md group-hover:bg-opacity-0">
                             <TextAa size={20} />
                         </span>
                     </button>

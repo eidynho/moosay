@@ -83,7 +83,7 @@ interface BorderColorProps {
 
 export function BorderColor({ updateBorderColor }: BorderColorProps) {
     return (
-        <div className="rounded-3xl px-8 py-6">
+        <div className="rounded-3xl max-w-2xl py-1">
             <h4 className="font-bold mb-3">Border color</h4>
             <div className="flex flex-wrap items-center gap-3">
                 {borderColorsList.map((item, index) => (
@@ -92,7 +92,7 @@ export function BorderColor({ updateBorderColor }: BorderColorProps) {
                         onClick={() => updateBorderColor(item.className)}
                         className={`${item.iconColor} inline-flex p-0.5 rounded-md group bg-gradient-to-br`}
                     >
-                        <span className="w-11 h-11 transition-all ease-in bg-d-primary rounded-md group-hover:bg-opacity-0"></span>
+                        <span className="w-10 h-10 sm:w-11 sm:h-11 transition-all ease-in bg-d-primary rounded-md group-hover:bg-opacity-0"></span>
                     </button>
                 ))}
             </div>
