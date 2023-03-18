@@ -27,12 +27,16 @@ export function ShareModal({ isOpen, handleToggleModal }: ShareModalProps) {
 
     useEffect(() => {
         if (isOpen) {
-            // get encoded strings to prevent user to see message and animal before access link
+            const animalPictureRef = document.getElementById("animalPicture");
+            const animalClasses = animalPictureRef?.className ?? "";
+
+            // get encoded strings to prevent user to see message, animal and styles before access link
             const encodedMessage = encodeString(message);
             const encodedAnimal = encodeString(animal);
+            const encodedClasses = encodeString(animalClasses);
 
             // generate link to share
-            const queryParams = `/application/share?message=${encodedMessage}&animal=${encodedAnimal}`;
+            const queryParams = `/application/share?message=${encodedMessage}&animal=${encodedAnimal}&styles=${encodedClasses}`;
             setShareLink(document.location.origin + queryParams);
         }
 
