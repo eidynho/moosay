@@ -46,32 +46,29 @@ export default function Application() {
 
     return (
         <main className="md:container mx-auto">
-            <div className="flex flex-col items-center">
-                <div className="min-w-1/2">
-                    <div className="flex flex-col md:flex-row items-start md:gap-2 lg:gap-6">
-                        <div>
-                            <MessageField />
-                            <div className="flex items-center gap-2 ml-2 mt-2">
-                                {/* <BaseListbox
+            <div className="flex flex-col items-center justify-center">
+                <div className="min-w-1/2 flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-2 lg:gap-6">
+                    <div>
+                        <MessageField />
+                        <div className="flex items-center gap-2 mx-2 mt-2">
+                            {/* <BaseListbox
                                     listItems={listAnimals}
                                     selected={animal}
                                     updateSelected={updateAnimal}
                                     customClasses="w-[12rem] mb-2"
                                 /> */}
-                                <CustomizeModal
-                                    customStyles={animalStylesInClassFormat}
-                                    animalStyles={animalStyles}
-                                    setAnimalStyles={setAnimalStyles}
-                                />
-                                <AppOptionsDropdown />
-                            </div>
+                            <CustomizeModal
+                                customStyles={animalStylesInClassFormat}
+                                animalStyles={animalStyles}
+                                setAnimalStyles={setAnimalStyles}
+                            />
+                            <AppOptionsDropdown />
                         </div>
-                        <AnimalMessage
-                            customStyles={`${animalStylesInClassFormat} px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg border`}
-                        />
                     </div>
+                    <AnimalMessage
+                        customStyles={`${animalStylesInClassFormat} px-4 pt-6 pb-8 max-w-xs text-start rounded-lg border`}
+                    />
                 </div>
-                <div className="mt-4 flex gap-4"></div>
             </div>
         </main>
     );

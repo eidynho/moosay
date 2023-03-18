@@ -56,7 +56,7 @@ export function AnimalMessage({
                 className={`${
                     customStyles
                         ? customStyles
-                        : "px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg "
+                        : "px-4 pt-6 pb-8 max-w-xs text-start rounded-lg "
                 }`}
             >
                 <div className="font-mono break-words whitespace-pre-wrap leading-6 w-[17.75rem]">

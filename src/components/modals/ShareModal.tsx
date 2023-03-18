@@ -3,7 +3,6 @@ import {
     CheckCircle,
     Copy,
     EnvelopeSimple,
-    Share,
     TwitterLogo,
     WhatsappLogo,
 } from "phosphor-react";
@@ -14,8 +13,12 @@ import { AnimalContext } from "../../contexts/AnimalContext";
 import { BaseModal } from "../headless-ui/BaseModal";
 import { encodeString } from "@/utils/encoderDecoder";
 
-export function ShareModal() {
-    const [isOpen, setIsOpen] = useState(false);
+interface ShareModalProps {
+    isOpen: boolean;
+    handleToggleModal: () => void;
+}
+
+export function ShareModal({ isOpen, handleToggleModal }: ShareModalProps) {
     const [shareLink, setShareLink] = useState("");
     const [shareLinkIsCopied, setShareLinkIsCopied] = useState(false);
 
@@ -36,8 +39,8 @@ export function ShareModal() {
         setShareLinkIsCopied(false);
     }, [isOpen]);
 
-    function handleToggleModal() {
-        setIsOpen((state) => !state);
+    function toggleModal() {
+        handleToggleModal();
     }
 
     async function handleCopyShareLink() {
@@ -50,88 +53,69 @@ export function ShareModal() {
     }
 
     return (
-        <>
-            <button
-                onClick={handleToggleModal}
-                className="text-gray-900 group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm hover:bg-secondary hover:text-white"
-            >
-                <Share size={24} />
-                <span>Share</span>
-            </button>
-
-            <BaseModal
-                size="max-w-md"
-                title="Share"
-                isOpen={isOpen}
-                toggleModal={handleToggleModal}
-            >
-                <div className="p-6">
-                    <div className="flex items-center gap-4 mb-5">
-                        <div className="flex flex-col items-center gap-2">
-                            <div
-                                title="Whatsapp"
-                                className="border rounded-full p-3 cursor-pointer bg-[#25D366] text-gray-100 transition-colors hover:bg-green-500"
-                            >
-                                <WhatsappLogo size={32} />
-                            </div>
-                            <span className="text-gray-900 text-xs">
-                                Whatsapp
-                            </span>
-                        </div>
-                        <div className="flex flex-col items-center gap-2">
-                            <div
-                                title="Twitter"
-                                className="border rounded-full p-3 cursor-pointer bg-[#1DA1F2] text-gray-100 transition-colors hover:bg-sky-600"
-                            >
-                                <TwitterLogo size={32} />
-                            </div>
-                            <span className="text-gray-900 text-xs">
-                                Twitter
-                            </span>
-                        </div>
-                        <div className="flex flex-col items-center gap-2">
-                            <div
-                                title="Email"
-                                className="border rounded-full p-3 cursor-pointer bg-gray-400 text-gray-100 transition-colors hover:bg-gray-500"
-                            >
-                                <EnvelopeSimple size={32} />
-                            </div>
-                            <span className="text-gray-900 text-xs">
-                                E-mail
-                            </span>
-                        </div>
-                    </div>
-
-                    <div
-                        onClick={handleCopyShareLink}
-                        className={
-                            !shareLinkIsCopied
-                                ? "border border-gray-300 rounded py-3 px-5 relative cursor-pointer"
-                                : "border border-green-500 rounded py-3 px-5 relative cursor-pointer"
-                        }
-                    >
+        <BaseModal
+            size="max-w-lg"
+            title="Share"
+            isOpen={isOpen}
+            toggleModal={toggleModal}
+        >
+            <div className="p-6">
+                <div className="flex items-center gap-4 mb-5">
+                    <div className="flex flex-col items-center gap-2">
                         <div
-                            title={shareLink}
-                            className="max-w-[90%] truncate text-gray-800"
+                            title="Whatsapp"
+                            className="border rounded-full p-3 cursor-pointer bg-[#25D366] text-l-primary transition-colors hover:bg-green-500"
                         >
-                            {shareLink}
+                            <WhatsappLogo size={32} />
                         </div>
-                        <span
-                            title="Copy snippet"
-                            className="absolute top-1 right-2 flex items-center gap-1 p-2 rounded text-gray-900 transition-colors focus:outline-none active:outline-none"
+                        <span className="text-xs">Whatsapp</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                        <div
+                            title="Twitter"
+                            className="border rounded-full p-3 cursor-pointer bg-[#1DA1F2] text-l-primary transition-colors hover:bg-sky-600"
                         >
-                            {!shareLinkIsCopied ? (
-                                <Copy size={24} />
-                            ) : (
-                                <CheckCircle
-                                    size={24}
-                                    className="text-green-700"
-                                />
-                            )}
-                        </span>
+                            <TwitterLogo size={32} />
+                        </div>
+                        <span className="text-xs">Twitter</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2">
+                        <div
+                            title="Email"
+                            className="border rounded-full p-3 cursor-pointer bg-gray-400 text-l-primary transition-colors hover:bg-gray-500"
+                        >
+                            <EnvelopeSimple size={32} />
+                        </div>
+                        <span className="text-xs">E-mail</span>
                     </div>
                 </div>
-            </BaseModal>
-        </>
+
+                <div
+                    onClick={handleCopyShareLink}
+                    className={
+                        !shareLinkIsCopied
+                            ? "border border-gray-300 rounded py-3 px-5 relative cursor-pointer"
+                            : "border border-green-500 rounded py-3 px-5 relative cursor-pointer"
+                    }
+                >
+                    <div
+                        title={shareLink}
+                        className="max-w-[90%] truncate text-l-primary"
+                    >
+                        {shareLink}
+                    </div>
+                    <span
+                        title="Copy snippet"
+                        className="absolute top-1 right-2 flex items-center gap-1 p-2 rounded transition-colors focus:outline-none active:outline-none"
+                    >
+                        {!shareLinkIsCopied ? (
+                            <Copy size={24} />
+                        ) : (
+                            <CheckCircle size={24} className="text-green-700" />
+                        )}
+                    </span>
+                </div>
+            </div>
+        </BaseModal>
     );
 }

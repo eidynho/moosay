@@ -1,16 +1,21 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Image } from "phosphor-react";
 import html2canvas from "html2canvas";
 
-import { MessageContext } from "@/contexts/MessageContext";
 import { BaseModal } from "../headless-ui/BaseModal";
+import { AnimalMessage } from "../AnimalMessage";
 
-export function DownloadModal() {
-    const [isOpen, setIsOpen] = useState(false);
+interface DownloadModalProps {
+    isOpen: boolean;
+    handleToggleModal: () => void;
+}
+
+export function DownloadModal({
+    isOpen,
+    handleToggleModal,
+}: DownloadModalProps) {
     const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
     const [fileType, setFileType] = useState("png");
-
-    const { message } = useContext(MessageContext);
 
     useEffect(() => {
         if (isOpen) {
@@ -44,58 +49,54 @@ export function DownloadModal() {
         downloadLink.click();
     }
 
-    function handleToggleModal() {
-        setIsOpen((state) => !state);
+    function toggleModal() {
+        handleToggleModal();
     }
 
     return (
-        <>
-            <button
-                disabled={!message || message === "<p></p>"}
-                onClick={handleToggleModal}
-                className="text-gray-900 group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm hover:bg-secondary hover:text-white
-                disabled:cursor-not-allowed disabled:brightness-75"
-            >
-                <Image size={24} />
-                <span>Generate picture</span>
-            </button>
-
-            <BaseModal
-                size="max-w-lg"
-                title="Generate picture"
-                isOpen={isOpen}
-                toggleModal={handleToggleModal}
-            >
-                {/* Modal body */}
-                <div className="p-6 text-gray-900">
-                    <div className="flex justify-center mb-5">
-                        {canvas && (
-                            <img
-                                src={canvas.toDataURL()}
-                                alt="captured content"
-                            />
-                        )}
-                    </div>
-                    <div className="flex items-center justify-between">
-                        <select
-                            className="border border-gray-400 text-zinc-900 py-2 px-4 rounded-lg outline-none"
-                            onChange={(e) => setFileType(e.target.value)}
-                        >
-                            <option value="png">PNG</option>
-                            <option value="jpg">JPG</option>
-                        </select>
-
-                        <button
-                            onClick={handleDownloadPicture}
-                            className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-d-primary bg-secondary transition-all
-                            hover:brightness-90"
-                        >
-                            <Image size={24} />
-                            <span>Download as {fileType.toUpperCase()}</span>
-                        </button>
-                    </div>
+        <BaseModal
+            size="max-w-lg"
+            title="Generate picture"
+            isOpen={isOpen}
+            toggleModal={toggleModal}
+        >
+            {/* Modal body */}
+            <div className="p-4 text-l-primary">
+                <div className="flex flex-col items-center justify-center mb-5">
+                    {canvas ? (
+                        <img src={canvas.toDataURL()} alt="captured content" />
+                    ) : (
+                        <AnimalMessage
+                            staticMessage="no message was typed :("
+                            customStyles="px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg text-red-400 border border-red-400"
+                        />
+                    )}
+                    <span className="max-w-xs mt-1 ml-2 text-xs text-gray-400">
+                        * Gradient background colors won't be reflected in
+                        generated picture
+                    </span>
                 </div>
-            </BaseModal>
-        </>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                    <select
+                        className="border border-gray-400 text-zinc-900 py-2 px-4 rounded-lg outline-none text-sm"
+                        onChange={(e) => setFileType(e.target.value)}
+                    >
+                        <option value="png">PNG</option>
+                        <option value="jpg">JPG</option>
+                    </select>
+
+                    <button
+                        disabled={!canvas}
+                        onClick={handleDownloadPicture}
+                        className="flex items-center gap-2 py-2 sm:py-3 px-3 sm:px-5 rounded-lg text-sm font-medium text-secondary border border-secondary transition-all
+                        hover:enabled:bg-secondary hover:enabled:text-d-primary
+                        disabled:cursor-not-allowed disabled:brightness-75 disabled:border-gray-400 disabled:text-gray-400"
+                    >
+                        <Image size={24} />
+                        <span>Download as {fileType.toUpperCase()}</span>
+                    </button>
+                </div>
+            </div>
+        </BaseModal>
     );
 }
