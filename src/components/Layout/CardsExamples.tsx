@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+
 import { AnimalMessage } from "../AnimalMessage";
 
 interface CardProps {
@@ -31,58 +32,67 @@ export function CardsExamples() {
             <div className="flex items-start justify-evenly">
                 <Card
                     clockWise
-                    customStyles="bg-secondary text-d-primary mt-12 -translate-x-6 hidden md:block"
+                    customStyles="bg-red-200 text-d-primary mt-12 -translate-x-6 hidden md:block"
                 >
                     <AnimalMessage
-                        staticMessage="hello world"
+                        staticMessage="<p>what's a king to a god?</p>
+                            <p>what's a god to a non-believer?</p>
+                            <p>who don't believe in anything?</p>"
                         staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-red-200"
                     />
                 </Card>
                 <Card
                     clockWise
-                    customStyles="bg-tertiary text-l-primary hidden lg:block"
+                    customStyles="bg-black text-l-primary hidden lg:block"
                 >
                     <AnimalMessage
-                        staticMessage="hello world"
+                        staticMessage="<p>let's play stardew valley?</p>"
                         staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-white"
                     />
                 </Card>
                 <Card
                     clockWise={false}
-                    customStyles="bg-primary text-d-primary mt-6 md:translate-x-6"
+                    customStyles="bg-purple-200 text-d-primary mt-6 md:translate-x-6"
                 >
                     <AnimalMessage
-                        staticMessage="hello world"
+                        staticMessage="<p>💡 movie suggestions:</p>
+                            <li>before sunrise (1995)</li><li>coco (2017)</li><li>soul (2020)</li><li>uncut gems (2019)</li><li>whiplash (2014)</li><li>interstellar (2014)</li>"
                         staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-purple-200"
                     />
                 </Card>
             </div>
             <div className="flex items-start justify-evenly">
                 <Card
                     clockWise
-                    customStyles="bg-primary text-d-primary mt-6 -translate-x-8 hidden md:block"
+                    customStyles="bg-green-200 text-d-primary mt-6 -translate-x-8 hidden md:block"
                 >
                     <AnimalMessage
-                        staticMessage="hello world"
+                        staticMessage="<p>what’s the most amazing thing you’ve ever witnessed?</p>"
                         staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-green-200"
                     />
                 </Card>
                 <Card
                     clockWise
-                    customStyles="bg-secondary text-d-primary mt-12 hidden lg:block"
+                    customStyles="bg-white text-d-primary mt-12 hidden lg:block"
                 >
                     <AnimalMessage
-                        staticMessage="hello world"
+                        staticMessage="<p>🤍 touch my neck and I'll touch yours</p>"
                         staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-white"
                     />
                 </Card>
                 <Card
                     clockWise={false}
-                    customStyles="bg-tertiary text-l-primary md:translate-x-8"
+                    customStyles="bg-cyan-200 text-l-primary md:translate-x-8"
                 >
                     <AnimalMessage
-                        staticMessage="hello world"
+                        staticMessage="<p>if you don’t believe in any kind of magic or mystery, you’re basically as good as dead</p>"
                         staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-cyan-200"
                     />
                 </Card>
             </div>

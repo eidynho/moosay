@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowCircleUpRight } from "phosphor-react";
+
 import { GradientBox } from "../GradientBox";
 
 export function ThinkCreateHaveFun() {

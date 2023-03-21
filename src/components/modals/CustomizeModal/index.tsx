@@ -5,9 +5,6 @@ import { BaseModal } from "../../headless-ui/BaseModal";
 import { AnimalMessage } from "../../AnimalMessage";
 import { AnimalStylesType } from "@/pages/application";
 import { GradientBox } from "../../GradientBox";
-import { AnimalColor } from "./CustomizeColors/AnimalColor";
-import { BackgroundColor } from "./CustomizeColors/BackgroundColor";
-import { BorderColor } from "./CustomizeColors/BorderColor";
 import { CustomizeColors } from "./CustomizeColors";
 
 interface CustomizeModalProps {

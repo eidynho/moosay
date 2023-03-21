@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Menu } from "@headlessui/react";
 import { Image, Share } from "phosphor-react";
+
 import { BaseDropdown } from "./headless-ui/BaseDropdown";
 import { DownloadModal } from "./modals/DownloadModal";
 import { ShareModal } from "./modals/ShareModal";
-import { Menu } from "@headlessui/react";
 
 export function AppOptionsDropdown() {
     const [shareModalIsOpen, setShareModalIsOpen] = useState(false);

@@ -1,5 +1,5 @@
-import { X } from "phosphor-react";
 import { useEffect, useState } from "react";
+import { X } from "phosphor-react";
 
 export function Announcement() {
     const [announcementVisibility, setAnnouncementVisibility] = useState<
