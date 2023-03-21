@@ -2,7 +2,6 @@ import { EditorContent, EditorContentProps, useEditor } from "@tiptap/react";
 import Placeholder from "@tiptap/extension-placeholder";
 import StarterKit from "@tiptap/starter-kit";
 import {
-    Code,
     ListDashes,
     ListNumbers,
     Quotes,
@@ -66,17 +65,6 @@ const MenuBar = ({ editor }: EditorContentProps) => {
                     className={baseIconButtonClass}
                     weight="bold"
                 />
-            </button>
-            <button
-                onClick={() => editor.chain().focus().toggleCode().run()}
-                disabled={!editor.can().chain().focus().toggleCode().run()}
-                className={`${baseButtonClass} ${
-                    editor.isActive("code")
-                        ? baseButtonActiveClass
-                        : baseButtonNotActiveClass
-                }`}
-            >
-                <Code className={baseIconButtonClass} weight="bold" />
             </button>
             <button
                 onClick={() =>
