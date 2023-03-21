@@ -54,13 +54,13 @@ export function CardsExamples() {
                 </Card>
                 <Card
                     clockWise={false}
-                    customStyles="bg-purple-200 text-d-primary mt-6 md:translate-x-6"
+                    customStyles="bg-amber-200 text-d-primary mt-6 md:translate-x-6"
                 >
                     <AnimalMessage
                         staticMessage="<p>💡 movie suggestions:</p>
-                            <li>before sunrise (1995)</li><li>coco (2017)</li><li>soul (2020)</li><li>uncut gems (2019)</li><li>whiplash (2014)</li><li>interstellar (2014)</li>"
+                            <ul><li>before sunrise (1995)</li><li>coco (2017)</li><li>soul (2020)</li><li>uncut gems (2019)</li><li>whiplash (2014)</li><li>interstellar (2014)</li></ul>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-purple-200"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-amber-200"
                     />
                 </Card>
             </div>
@@ -77,7 +77,7 @@ export function CardsExamples() {
                 </Card>
                 <Card
                     clockWise
-                    customStyles="bg-white text-d-primary mt-12 hidden lg:block"
+                    customStyles="bg-white text-d-primary -mt-20 hidden lg:block"
                 >
                     <AnimalMessage
                         staticMessage="<p>🤍 touch my neck and I'll touch yours</p>"
@@ -93,6 +93,38 @@ export function CardsExamples() {
                         staticMessage="<p>if you don’t believe in any kind of magic or mystery, you’re basically as good as dead</p>"
                         staticAnimal="cow"
                         customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-cyan-200"
+                    />
+                </Card>
+            </div>
+            <div className="flex items-start justify-evenly">
+                <Card
+                    clockWise
+                    customStyles="bg-orange-200 text-d-primary mt-12 -translate-x-6 hidden md:block"
+                >
+                    <AnimalMessage
+                        staticMessage="<p>good day in my mind 🌞</p>"
+                        staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-orange-200"
+                    />
+                </Card>
+                <Card
+                    clockWise
+                    customStyles="bg-fuchsia-200 text-l-primary -mt-12 hidden lg:block"
+                >
+                    <AnimalMessage
+                        staticMessage="<h1>grocery list</h1><p></p><ol><li><p>grapes</p></li><li><p>apples</p></li><li><p>butter</p></li><li><p>ice cream</p></li><li><p>eggs</p></li><li><p>instant noodles</p></li><li><p>dog food</p></li><li><p>yogurt</p></li></ol><p></p><blockquote><p>ps: i love you 🤍</p></blockquote>"
+                        staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-fuchsia-200"
+                    />
+                </Card>
+                <Card
+                    clockWise={false}
+                    customStyles="bg-red-400 text-d-primary mt-6 md:translate-x-6"
+                >
+                    <AnimalMessage
+                        staticMessage="<p>🇧🇷</p><p>vou deixar a rua me levar</p><p>ver a cidade se acender</p><p>a lua vai banhar esse lugar</p><p>e eu vou lembrar você</p>"
+                        staticAnimal="cow"
+                        customStyles="pb-6 max-w-xs text-start rounded-lg text-white bg-red-400"
                     />
                 </Card>
             </div>
