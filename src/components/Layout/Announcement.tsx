@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X } from "phosphor-react";
+import Link from "next/link";
 
 export function Announcement() {
     const [announcementVisibility, setAnnouncementVisibility] = useState<
@@ -33,15 +34,12 @@ export function Announcement() {
                     : "relative flex items-center justify-center h-12 bg-primary transition-all hover:brightness-90"
             }`}
         >
-            <div className="flex items-center gap-2">
-                <a
-                    href="https://github.com/eidynho/moosay"
-                    target="_blank"
-                    className="flex items-center gap-2 font-bold text-sm sm:text-base text-d-primary hover:underline"
-                >
-                    Moosay is open source — Contribute here 🎈
-                </a>
-            </div>
+            <Link
+                href="/application"
+                className="text-d-primary font-bold underline"
+            >
+                Now you can customize animal color - try it out 🎈
+            </Link>
             <X
                 size={16}
                 weight="bold"

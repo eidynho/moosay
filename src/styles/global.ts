@@ -48,6 +48,24 @@ export const globalStyles = globalCss({
         fontSize: "1rem",
     },
 
+    "a[target='_blank']": {
+        textDecoration: "underline !important",
+        color: "$white",
+        background: "linear-gradient(to right, $white 50%, transparent 50%)",
+        backgroundSize: "205% 100%",
+        backgroundPosition: "right bottom",
+        borderRadius: "0.25rem",
+        padding: "0.125rem 0.25rem",
+        transition: "background 0.25s ease",
+
+        "&:hover": {
+            color: "$primary",
+            backgroundColor: "$primary",
+            backgroundPosition: "left bottom",
+            transition: "background 0.25s ease, color 0.3s ease",
+        },
+    },
+
     blockquote: {
         padding: "0.25rem 1rem 0.25rem",
         borderLeft: "2px solid #0ea5e9",

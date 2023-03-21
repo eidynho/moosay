@@ -3,27 +3,21 @@ import Link from "next/link";
 export function NavBarComponent() {
     return (
         <div className="md:container mx-auto">
-            <nav className="flex items-center justify-between w-full px-4 sm:px-16 h-16">
+            <nav className="flex items-center justify-between gap-3 w-full px-4 sm:px-16 h-20 font-mono">
                 <Link href="/" className="font-extrabold">
                     Moosay
                 </Link>
 
-                <a
-                    href="https://github.com/eidynho/moosay"
-                    target="_blank"
-                    className="flex items-center gap-2 font-bold py-2 px-3 rounded-lg transition-colors cursor-pointer hover:bg-zinc-800 hover:text-secondary"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
+                <span className="text-sm text-end">
+                    Built by{" "}
+                    <a
+                        href="https://www.linkedin.com/in/eidy/"
+                        target="_blank"
+                        className="underline"
                     >
-                        <path d="M212.62,75.17A63.7,63.7,0,0,0,206.39,26,12,12,0,0,0,196,20a63.71,63.71,0,0,0-50,24H126A63.71,63.71,0,0,0,76,20a12,12,0,0,0-10.39,6,63.7,63.7,0,0,0-6.23,49.17A61.5,61.5,0,0,0,52,104v8a60.1,60.1,0,0,0,45.76,58.28A43.66,43.66,0,0,0,92,192v4H76a20,20,0,0,1-20-20,44.05,44.05,0,0,0-44-44,12,12,0,0,0,0,24,20,20,0,0,1,20,20,44.05,44.05,0,0,0,44,44H92v12a12,12,0,0,0,24,0V192a20,20,0,0,1,40,0v40a12,12,0,0,0,24,0V192a43.66,43.66,0,0,0-5.76-21.72A60.1,60.1,0,0,0,220,112v-8A61.5,61.5,0,0,0,212.62,75.17ZM196,112a36,36,0,0,1-36,36H112a36,36,0,0,1-36-36v-8a37.87,37.87,0,0,1,6.13-20.12,11.65,11.65,0,0,0,1.58-11.49,39.9,39.9,0,0,1-.4-27.72,39.87,39.87,0,0,1,26.41,17.8A12,12,0,0,0,119.82,68h32.35a12,12,0,0,0,10.11-5.53,39.84,39.84,0,0,1,26.41-17.8,39.9,39.9,0,0,1-.4,27.72,12,12,0,0,0,1.61,11.53A37.85,37.85,0,0,1,196,104Z"></path>
-                    </svg>
-                    GitHub
-                </a>
+                        Vinicius Eidy Okuda
+                    </a>
+                </span>
             </nav>
         </div>
     );
