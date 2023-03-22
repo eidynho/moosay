@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { EditorContent, EditorContentProps, useEditor } from "@tiptap/react";
 import Placeholder from "@tiptap/extension-placeholder";
 import StarterKit from "@tiptap/starter-kit";
 import {
+    Lightning,
     ListDashes,
     ListNumbers,
     Quotes,
@@ -11,14 +13,26 @@ import {
     TextStrikethrough,
 } from "phosphor-react";
 
+import { MessageContext } from "@/contexts/MessageContext";
+import { getRandomSentence } from "@/utils/randomSentences";
+
 interface TiptapProps {
     placeholder?: string;
     updateContent: (value: string) => void;
 }
 
 const MenuBar = ({ editor }: EditorContentProps) => {
+    const { updateMessage } = useContext(MessageContext);
+
     if (!editor) {
         return null;
+    }
+
+    function handleGetRandomSentence() {
+        const randomSentence = getRandomSentence();
+
+        editor?.commands.setContent(randomSentence);
+        updateMessage(randomSentence);
     }
 
     const baseButtonClass =
@@ -26,10 +40,20 @@ const MenuBar = ({ editor }: EditorContentProps) => {
     const baseButtonActiveClass = "text-d-primary bg-gray-300 bg-opacity-80";
     const baseButtonNotActiveClass = "text-l-primary";
 
-    const baseIconButtonClass = "w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6";
+    const baseIconButtonClass = "w-5 h-5 lg:w-6 lg:h-6";
 
     return (
-        <div className="flex items-center gap-1 sm:gap-2">
+        <div className="flex items-center gap-1 lg:gap-2">
+            <button
+                onClick={handleGetRandomSentence}
+                title="Generate random sentence"
+                className={`${baseButtonClass}`}
+            >
+                <Lightning className={baseIconButtonClass} weight="bold" />
+            </button>
+
+            <div className="h-8 w-[1px] border-l border-[#999]"></div>
+
             <button
                 onClick={() => editor.chain().focus().toggleBold().run()}
                 disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -142,10 +166,10 @@ export function Tiptap({ placeholder, updateContent }: TiptapProps) {
     });
 
     return (
-        <section className="flex flex-col border rounded-lg mx-2 py-4 px-5 max-w-[24rem] lg:max-w-[30rem] xl:max-w-[46rem]">
+        <div className="flex flex-col border rounded-lg mx-2 py-4 px-5 w-[23rem] lg:w-[30rem] xl:w-[46rem]">
             <EditorContent editor={editor} />
             <div className="w-full h-[1px] border-t border-[#999] mb-3 mt-2 lg:mb-4 lg:mt-3"></div>
             <MenuBar editor={editor} />
-        </section>
+        </div>
     );
 }

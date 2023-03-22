@@ -36,7 +36,7 @@ export function Announcement() {
         >
             <Link
                 href="/application"
-                className="text-d-primary font-bold underline"
+                className="text-d-primary font-bold underline text-center max-w-[18rem] sm:max-w-sm"
             >
                 Now you can customize animal color - try it out 🎈
             </Link>
