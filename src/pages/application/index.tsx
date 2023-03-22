@@ -47,7 +47,7 @@ export default function Application() {
     return (
         <main className="md:container mx-auto">
             <div className="flex flex-col items-center justify-center">
-                <div className="min-w-1/2 flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-2 lg:gap-6">
+                <div className="min-w-1/2 mb-8 flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-2 lg:gap-6">
                     <div>
                         <MessageField />
                         <div className="flex items-center gap-2 mx-2 mt-2">
@@ -66,7 +66,7 @@ export default function Application() {
                         </div>
                     </div>
                     <AnimalMessage
-                        customStyles={`${animalStylesInClassFormat} px-4 pt-6 pb-8 mb-8 max-w-xs text-start rounded-lg border`}
+                        customStyles={`${animalStylesInClassFormat} px-4 pt-6 pb-8 max-w-xs text-start rounded-lg border`}
                     />
                 </div>
             </div>
