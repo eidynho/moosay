@@ -29,7 +29,7 @@ export function AnimalMessage({
         return message.length <= 28 ? message.length + 1 : 29;
     }
 
-    function animalInScreen(staticAnimal: string) {
+    function animalInScreen(staticAnimal: string | undefined) {
         const animalToShow = staticAnimal ?? animal;
 
         switch (animalToShow) {
