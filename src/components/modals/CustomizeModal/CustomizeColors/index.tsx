@@ -1,5 +1,6 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import { CaretUp } from "phosphor-react";
+
 import { AnimalColor } from "./AnimalColor";
 import { BackgroundColor } from "./BackgroundColor";
 import { BorderColor } from "./BorderColor";
@@ -36,7 +37,7 @@ export function CustomizeColors({
                 <Disclosure defaultOpen key={index}>
                     {({ open }) => (
                         <div className="flex flex-col items-center">
-                            <Disclosure.Button className="mt-3 flex w-full justify-between rounded-lg bg-purple-100/80 px-4 py-2 max-w-2xl text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                            <Disclosure.Button className="mt-3 flex w-full justify-between rounded-md bg-pink-200/80 px-4 py-2 max-w-2xl text-left text-sm font-medium text-pink-700 hover:bg-purple-200">
                                 <span>{item.title}</span>
                                 <CaretUp
                                     className={`${

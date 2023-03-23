@@ -166,7 +166,7 @@ export function Tiptap({ placeholder, updateContent }: TiptapProps) {
     });
 
     return (
-        <div className="flex flex-col border rounded-lg mx-2 py-4 px-5 w-[23rem] lg:w-[30rem] xl:w-[46rem]">
+        <div className="flex flex-col border rounded-md mx-2 py-4 px-5 w-[23rem] lg:w-[30rem] xl:w-[46rem]">
             <EditorContent editor={editor} />
             <div className="w-full h-[1px] border-t border-[#999] mb-3 mt-2 lg:mb-4 lg:mt-3"></div>
             <MenuBar editor={editor} />

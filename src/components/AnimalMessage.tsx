@@ -29,8 +29,10 @@ export function AnimalMessage({
         return message.length <= 28 ? message.length + 1 : 29;
     }
 
-    function animalInScreen() {
-        switch (animal) {
+    function animalInScreen(staticAnimal: string) {
+        const animalToShow = staticAnimal ?? animal;
+
+        switch (animalToShow) {
             case "cow":
                 return cow;
             case "bat":
@@ -57,7 +59,7 @@ export function AnimalMessage({
                 className={`${
                     customStyles
                         ? customStyles
-                        : "px-4 pt-6 pb-8 max-w-xs text-start rounded-lg"
+                        : "px-4 pt-6 pb-8 max-w-xs text-start rounded-md"
                 }`}
             >
                 <div className="font-mono break-words whitespace-pre-wrap leading-6 w-[17.75rem]">
@@ -69,7 +71,7 @@ export function AnimalMessage({
                         }}
                     ></span>
                     <div>{"-".repeat(maxRepeatMessageWall())}</div>
-                    {animalInScreen()}
+                    {animalInScreen(staticAnimal)}
                 </div>
             </div>
         );
@@ -86,7 +88,7 @@ export function AnimalMessage({
             {!emptyMessage && !isGradient && <AnimalMessageContent />}
 
             {emptyMessage && (
-                <div className="font-mono flex align-center justify-center w-[19.85rem] h-64 border border-dashed rounded-lg">
+                <div className="font-mono flex align-center justify-center w-[19.85rem] h-64 border border-dashed rounded-md">
                     <span className="my-auto">
                         {staticAnimal ?? animal} will appear here
                     </span>

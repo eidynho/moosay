@@ -51,8 +51,8 @@ export function CustomizeModal({
         <>
             <button
                 onClick={handleToggleModal}
-                className="flex items-center gap-2 py-3 px-5 rounded-lg text-sm font-medium text-secondary border border-secondary transition-all
-                hover:enabled:bg-secondary hover:enabled:text-d-primary
+                className="flex items-center gap-2 py-3 px-5 rounded-md text-sm font-medium text-pink-200 border border-pink-200 transition-all
+                hover:enabled:bg-pink-200 hover:enabled:text-pink-700
                 disabled:cursor-not-allowed disabled:brightness-75"
             >
                 <Palette size={24} />
@@ -71,13 +71,13 @@ export function CustomizeModal({
                         <GradientBox>
                             <AnimalMessage
                                 staticMessage="moo-la-la..."
-                                customStyles={`${customStyles} px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg border`}
+                                customStyles={`${customStyles} px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-md border`}
                             />
                         </GradientBox>
                     ) : (
                         <AnimalMessage
                             staticMessage="moo-la-la..."
-                            customStyles={`${customStyles} px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg border`}
+                            customStyles={`${customStyles} px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-md border`}
                         />
                     )}
 

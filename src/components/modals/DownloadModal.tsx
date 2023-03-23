@@ -68,7 +68,7 @@ export function DownloadModal({
                     ) : (
                         <AnimalMessage
                             staticMessage="no message was typed :("
-                            customStyles="px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-lg text-red-400 border border-red-400"
+                            customStyles="px-4 pt-6 pb-8 max-w-xs text-start pointer-events-none rounded-md text-red-400 border border-red-400"
                         />
                     )}
                     <span className="max-w-xs mt-1 ml-2 text-xs text-gray-400">
@@ -78,7 +78,7 @@ export function DownloadModal({
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                     <select
-                        className="border border-gray-400 text-zinc-900 py-2 px-4 rounded-lg outline-none text-sm"
+                        className="border border-gray-400 text-zinc-900 py-2 px-4 rounded-md outline-none text-sm"
                         onChange={(e) => setFileType(e.target.value)}
                     >
                         <option value="png">PNG</option>
@@ -88,8 +88,8 @@ export function DownloadModal({
                     <button
                         disabled={!canvas}
                         onClick={handleDownloadPicture}
-                        className="flex items-center gap-2 py-2 sm:py-3 px-3 sm:px-5 rounded-lg text-sm font-medium text-secondary border border-secondary transition-all
-                        hover:enabled:bg-secondary hover:enabled:text-d-primary
+                        className="flex items-center gap-2 py-2 sm:py-3 px-3 sm:px-5 rounded-md text-sm font-medium text-pink-200 border border-pink-200 transition-all
+                        hover:enabled:bg-pink-200 hover:enabled:text-pink-700
                         disabled:cursor-not-allowed disabled:brightness-75 disabled:border-gray-400 disabled:text-gray-400"
                     >
                         <Image size={24} />

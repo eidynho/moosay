@@ -58,7 +58,7 @@ export function ThinkCreateHaveFun() {
             <GradientBox>
                 <Link
                     href="/application"
-                    className="flex items-center gap-2 py-3 px-8 rounded-lg text-lg font-medium text-l-primary border border-transparent bg-ghost bg-clip-padding transition-all"
+                    className="flex items-center gap-2 py-3 px-8 rounded-md text-lg font-medium text-l-primary border border-transparent bg-ghost bg-clip-padding transition-all"
                 >
                     <ArrowCircleUpRight size={24} weight="fill" />
                     Get started

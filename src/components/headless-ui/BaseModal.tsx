@@ -65,7 +65,7 @@ export function BaseModal({
                                         </Dialog.Title>
                                         <button
                                             onClick={toggleModal}
-                                            className="text-l-primary bg-transparent hover:bg-gray-100/10 hover:text-gray-100 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+                                            className="text-l-primary bg-transparent hover:bg-gray-100/10 hover:text-gray-100 rounded-md text-sm p-1.5 ml-auto inline-flex items-center"
                                             data-modal-hide="defaultModal"
                                         >
                                             <X size={24} />

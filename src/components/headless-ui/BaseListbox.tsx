@@ -27,7 +27,7 @@ export function BaseListbox({
     return (
         <Listbox value={selected} onChange={handleUpdateSelected}>
             <div className={`relative ${customClasses}`}>
-                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white text-gray-900 py-3 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-yellow-500 sm:text-base">
+                <Listbox.Button className="relative w-full cursor-default rounded-md border bg-transparent text-l-primary py-[0.875rem] pl-3 pr-10 text-sm font-medium text-left focus:outline-none">
                     <span className="block truncate">{selected}</span>
                     <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                         <CaretDoubleDown size={16} />
@@ -39,15 +39,15 @@ export function BaseListbox({
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                    <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-d-primary opacity-95 py-1 shadow-lg focus:outline-none text-sm">
                         {listItems.map((item, index) => (
                             <Listbox.Option
                                 key={index}
                                 className={({ active }) =>
                                     `relative cursor-default select-none py-2 pl-10 pr-4 ${
                                         active
-                                            ? "bg-amber-200 text-yellow-900"
-                                            : "text-gray-900"
+                                            ? "bg-pink-200 text-pink-700"
+                                            : "text-l-primary"
                                     }`
                                 }
                                 value={item.value}
@@ -64,7 +64,7 @@ export function BaseListbox({
                                             {item.text}
                                         </span>
                                         {selected ? (
-                                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-700">
+                                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-pink-700">
                                                 <Check size={16} />
                                             </span>
                                         ) : null}

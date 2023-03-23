@@ -18,31 +18,33 @@ export function AppOptionsDropdown() {
         setDownloadModalIsOpen((state) => !state);
     }
 
+    const menuItemsList = [
+        {
+            icon: <Share size={24} />,
+            title: "Share",
+            onClick: handleToggleShareModal,
+        },
+        {
+            icon: <Image size={24} />,
+            title: "Generate picture",
+            onClick: handleToggleDownloadModal,
+        },
+    ];
+
     return (
         <>
-            <BaseDropdown title="More">
-                <>
+            <BaseDropdown>
+                {menuItemsList.map((item) => (
                     <Menu.Item>
                         <button
-                            onClick={handleToggleShareModal}
-                            className="text-gray-900 group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm hover:bg-secondary hover:text-white"
+                            onClick={item.onClick}
+                            className="text-l-primary group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm hover:bg-pink-200 hover:text-pink-700"
                         >
-                            <Share size={24} />
-                            <span>Share</span>
+                            {item.icon}
+                            <span>{item.title}</span>
                         </button>
                     </Menu.Item>
-
-                    <Menu.Item>
-                        <button
-                            onClick={handleToggleDownloadModal}
-                            className="text-gray-900 group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm hover:bg-secondary hover:text-white
-                        disabled:cursor-not-allowed disabled:brightness-75"
-                        >
-                            <Image size={24} />
-                            <span>Generate picture</span>
-                        </button>
-                    </Menu.Item>
-                </>
+                ))}
             </BaseDropdown>
 
             <ShareModal

@@ -13,7 +13,7 @@ const Card = ({ children, clockWise, customStyles }: CardProps) => {
         <div
             className={`${
                 customStyles ? customStyles : ""
-            } relative w-[19rem] pt-10 pb-0 px-2 rounded-lg font-bold transition-all hover:scale-110 ${
+            } relative w-[19rem] pt-10 pb-0 px-2 rounded-md font-bold transition-all hover:scale-110 ${
                 clockWise ? "hover:rotate-3" : "hover:-rotate-3"
             }`}
         >
@@ -39,7 +39,7 @@ export function CardsExamples() {
                             <p>what's a god to a non-believer?</p>
                             <p>who don't believe in anything?</p>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-red-200"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-black bg-red-200"
                     />
                 </Card>
                 <Card
@@ -49,7 +49,7 @@ export function CardsExamples() {
                     <AnimalMessage
                         staticMessage="<p>let's play stardew valley?</p>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-white"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-white"
                     />
                 </Card>
                 <Card
@@ -60,7 +60,7 @@ export function CardsExamples() {
                         staticMessage="<p>💡 movie suggestions:</p>
                             <ul><li>before sunrise (1995)</li><li>coco (2017)</li><li>soul (2020)</li><li>uncut gems (2019)</li><li>whiplash (2014)</li><li>interstellar (2014)</li></ul>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-amber-200"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-black bg-amber-200"
                     />
                 </Card>
             </div>
@@ -72,7 +72,7 @@ export function CardsExamples() {
                     <AnimalMessage
                         staticMessage="<p>what’s the most amazing thing you’ve ever witnessed?</p>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-green-200"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-black bg-green-200"
                     />
                 </Card>
                 <Card
@@ -82,7 +82,7 @@ export function CardsExamples() {
                     <AnimalMessage
                         staticMessage="<p>🤍 touch my neck and I'll touch yours</p>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-white"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-black bg-white"
                     />
                 </Card>
                 <Card
@@ -92,7 +92,7 @@ export function CardsExamples() {
                     <AnimalMessage
                         staticMessage="<p>if you don’t believe in any kind of magic or mystery, you’re basically as good as dead</p>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-cyan-200"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-black bg-cyan-200"
                     />
                 </Card>
             </div>
@@ -104,7 +104,7 @@ export function CardsExamples() {
                     <AnimalMessage
                         staticMessage="<p>good day in my mind 🌞</p>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-orange-200"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-black bg-orange-200"
                     />
                 </Card>
                 <Card
@@ -114,7 +114,7 @@ export function CardsExamples() {
                     <AnimalMessage
                         staticMessage="<h1>grocery list</h1><p></p><ol><li><p>grapes</p></li><li><p>apples</p></li><li><p>butter</p></li><li><p>ice cream</p></li><li><p>eggs</p></li><li><p>instant noodles</p></li><li><p>dog food</p></li><li><p>yogurt</p></li></ol><p></p><blockquote><p>ps: i love you 🤍</p></blockquote>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-black bg-fuchsia-200"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-black bg-fuchsia-200"
                     />
                 </Card>
                 <Card
@@ -124,7 +124,7 @@ export function CardsExamples() {
                     <AnimalMessage
                         staticMessage="<p>🇧🇷</p><p>vou deixar a rua me levar</p><p>ver a cidade se acender</p><p>a lua vai banhar esse lugar</p><p>e eu vou lembrar você</p>"
                         staticAnimal="cow"
-                        customStyles="pb-6 max-w-xs text-start rounded-lg text-white bg-red-400"
+                        customStyles="pb-6 max-w-xs text-start rounded-md text-white bg-red-400"
                     />
                 </Card>
             </div>

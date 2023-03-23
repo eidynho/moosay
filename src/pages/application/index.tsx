@@ -50,23 +50,23 @@ export default function Application() {
                 <div className="min-w-1/2 mb-8 flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-2 lg:gap-6">
                     <div>
                         <MessageField />
-                        <div className="flex items-center gap-2 mx-2 mt-2">
-                            {/* <BaseListbox
-                                    listItems={listAnimals}
-                                    selected={animal}
-                                    updateSelected={updateAnimal}
-                                    customClasses="w-[12rem] mb-2"
-                                /> */}
+                        <div className="flex items-center justify-between lg:justify-start gap-2 mx-2 mt-2 mb-4 md:mb-0">
                             <CustomizeModal
                                 customStyles={animalStylesInClassFormat}
                                 animalStyles={animalStyles}
                                 setAnimalStyles={setAnimalStyles}
                             />
+                            <BaseListbox
+                                listItems={listAnimals}
+                                selected={animal}
+                                updateSelected={updateAnimal}
+                                customClasses="w-[9rem]"
+                            />
                             <AppOptionsDropdown />
                         </div>
                     </div>
                     <AnimalMessage
-                        customStyles={`${animalStylesInClassFormat} px-4 pt-6 pb-8 max-w-xs text-start rounded-lg border`}
+                        customStyles={`${animalStylesInClassFormat} px-4 pt-6 pb-8 max-w-xs text-start rounded-md border`}
                     />
                 </div>
             </div>

@@ -64,7 +64,7 @@ export function ShareModal({ isOpen, handleToggleModal }: ShareModalProps) {
             toggleModal={toggleModal}
         >
             <div className="p-6">
-                <div className="flex items-center gap-4 mb-5">
+                {/* <div className="flex items-center gap-4 mb-5">
                     <div className="flex flex-col items-center gap-2">
                         <div
                             title="Whatsapp"
@@ -92,7 +92,7 @@ export function ShareModal({ isOpen, handleToggleModal }: ShareModalProps) {
                         </div>
                         <span className="text-xs">E-mail</span>
                     </div>
-                </div>
+                </div> */}
 
                 <div
                     onClick={handleCopyShareLink}
